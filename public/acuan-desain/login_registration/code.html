@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login &amp; Registration | Pesona Baubau Mitra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1A5276 0%, #2D5A3E 100%);
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 248, 241, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .partner-card-active {
+            border-color: #003b5a;
+            background-color: #cbe6ff;
+            transform: translateY(-2px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#f2bd74",
+                      "on-surface-variant": "#41474e",
+                      "surface-tint": "#2f6388",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#33302a",
+                      "tertiary-fixed": "#ffddb3",
+                      "on-tertiary-fixed": "#291800",
+                      "on-surface": "#1e1b16",
+                      "on-primary": "#ffffff",
+                      "outline": "#72787f",
+                      "primary-fixed-dim": "#9bccf6",
+                      "surface-bright": "#fff8f1",
+                      "primary": "#003b5a",
+                      "on-background": "#1e1b16",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#261900",
+                      "tertiary-container": "#6b4604",
+                      "background": "#fff8f1",
+                      "on-tertiary-fixed-variant": "#633f00",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f4ede3",
+                      "primary-container": "#1a5276",
+                      "on-secondary-fixed-variant": "#5a4312",
+                      "on-primary-fixed": "#001e30",
+                      "surface-container-high": "#eee7de",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c1c7cf",
+                      "primary-fixed": "#cbe6ff",
+                      "on-secondary-container": "#795f2b",
+                      "secondary": "#745a27",
+                      "surface-container-low": "#faf3e9",
+                      "on-tertiary-container": "#eab66d",
+                      "on-primary-fixed-variant": "#0e4b6e",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#4d3100",
+                      "secondary-fixed": "#ffdea4",
+                      "secondary-container": "#fedb9b",
+                      "surface-container-highest": "#e8e1d8",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#9bccf6",
+                      "surface": "#fff8f1",
+                      "surface-variant": "#e8e1d8",
+                      "on-primary-container": "#94c5ee",
+                      "surface-dim": "#e0d9d0",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#e4c285",
+                      "inverse-on-surface": "#f7f0e6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "4xl": "64px",
+                      "sm": "8px",
+                      "margin-desktop": "24px",
+                      "xs": "4px",
+                      "2xl": "32px",
+                      "lg": "16px",
+                      "gutter": "16px",
+                      "xl": "24px",
+                      "margin-mobile": "16px",
+                      "md": "12px",
+                      "3xl": "48px"
+              },
+              "fontFamily": {
+                      "h4": ["Inter"],
+                      "body": ["Inter"],
+                      "h2": ["Inter"],
+                      "h3": ["Inter"],
+                      "body-medium": ["Inter"],
+                      "label": ["Inter"],
+                      "button": ["Inter"],
+                      "h1": ["Inter"]
+              },
+              "fontSize": {
+                      "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                      "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col items-center justify-start py-10 px-4">
+<!-- Header / Logo Section -->
+<header class="mb-8 text-center animate-fade-in">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-4 shadow-lg">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="anchor">anchor</span>
+</div>
+<h1 class="font-h1 text-h1 text-white tracking-tight">Pesona Baubau Mitra</h1>
+<p class="font-body text-white/80 mt-2">Pusat Digitalisasi Ekosistem Pariwisata</p>
+</header>
+<!-- Main Container -->
+<main class="w-full max-w-md glass-card rounded-[24px] shadow-2xl overflow-hidden transition-all duration-500">
+<!-- Tab Navigation -->
+<nav class="flex border-b border-outline-variant/30">
+<button class="flex-1 py-4 font-h4 text-h4 transition-all duration-300 border-b-2 border-primary text-primary" id="btn-masuk" onclick="switchTab('masuk')">
+                Masuk
+            </button>
+<button class="flex-1 py-4 font-h4 text-h4 transition-all duration-300 border-b-2 border-transparent text-on-surface-variant" id="btn-daftar" onclick="switchTab('daftar')">
+                Daftar
+            </button>
+</nav>
+<!-- Form Canvas -->
+<div class="p-6">
+<!-- Login Form -->
+<form class="space-y-4" id="form-masuk">
+<div class="space-y-1">
+<label class="font-label text-label text-on-surface-variant ml-1">Email Mitra</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant/30 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="nama@email.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="font-label text-label text-on-surface-variant ml-1">Kata Sandi</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant/30 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex justify-end">
+<a class="font-label text-label text-primary hover:underline" href="#">Lupa kata sandi?</a>
+</div>
+<button class="w-full h-[48px] bg-primary text-white rounded-xl font-button text-button shadow-md hover:opacity-90 active:scale-95 transition-all" type="submit">
+                    Masuk ke Dashboard
+                </button>
+</form>
+<!-- Registration Form (Hidden by default) -->
+<form class="hidden space-y-4" id="form-daftar">
+<div class="space-y-1">
+<label class="font-label text-label text-on-surface-variant ml-1">Nama Lengkap</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant/30 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Masukkan nama sesuai KTP" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="space-y-1">
+<label class="font-label text-label text-on-surface-variant ml-1">Email</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant/30 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="nama@email.com" type="email"/>
+</div>
+<div class="space-y-1">
+<label class="font-label text-label text-on-surface-variant ml-1">WhatsApp</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant/30 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="0812..." type="tel"/>
+</div>
+</div>
+<!-- Partner Type Selection -->
+<div class="space-y-2">
+<label class="font-label text-label text-on-surface-variant ml-1">Jenis Kemitraan</label>
+<div class="grid grid-cols-3 gap-2">
+<div class="partner-option cursor-pointer flex flex-col items-center justify-center p-3 rounded-xl border border-outline-variant/30 bg-white hover:bg-surface-container-low transition-all" onclick="selectPartner(this)">
+<span class="text-2xl mb-1">🏪</span>
+<span class="font-label text-label text-[10px] text-center leading-tight">UMKM</span>
+</div>
+<div class="partner-option cursor-pointer flex flex-col items-center justify-center p-3 rounded-xl border border-outline-variant/30 bg-white hover:bg-surface-container-low transition-all" onclick="selectPartner(this)">
+<span class="text-2xl mb-1">🏨</span>
+<span class="font-label text-label text-[10px] text-center leading-tight">Hotel/Homestay</span>
+</div>
+<div class="partner-option cursor-pointer flex flex-col items-center justify-center p-3 rounded-xl border border-outline-variant/30 bg-white hover:bg-surface-container-low transition-all" onclick="selectPartner(this)">
+<span class="text-2xl mb-1">👥</span>
+<span class="font-label text-label text-[10px] text-center leading-tight">Pokdarwis</span>
+</div>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label text-label text-on-surface-variant ml-1">Kata Sandi</label>
+<input class="w-full h-[48px] px-4 rounded-xl border border-outline-variant/30 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all" placeholder="Minimal 8 karakter" type="password"/>
+</div>
+<div class="flex items-start gap-2 py-2">
+<input class="mt-1 rounded text-primary focus:ring-primary" id="terms" type="checkbox"/>
+<label class="font-label text-label text-on-surface-variant" for="terms">Saya menyetujui syarat dan ketentuan kemitraan Pesona Baubau Digital Hub.</label>
+</div>
+<button class="w-full h-[48px] bg-secondary text-white rounded-xl font-button text-button shadow-md hover:opacity-90 active:scale-95 transition-all" type="submit">
+                    Daftar Sekarang
+                </button>
+</form>
+</div>
+<!-- Footer Visual -->
+<div class="relative h-24 overflow-hidden mt-2">
+<img class="w-full h-full object-cover opacity-30 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="A serene wide shot of the Buton Palace Fort landscape in Baubau at sunset, featuring traditional stone architecture and the vast Celebes sea in the background. The lighting is warm and golden, reflecting a prestigious and historical mood that aligns with a high-end tourism portal. The scene is framed with lush tropical greenery under a clear evening sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb08rrAx4_MqyDyhCbzLmLgbxm2O_YAlNgvJHT0Ebak4NAVkio-itc4R_NY7y7x_aGdjalBAmAnjv24luyebecJDuhlL6mfp3Nz3KPGiVtOrDM_pZW1viejVREvdYIzoH-saL9Cux1dRrKQObfwTj32vJmY7FJEEUWW-kEzYTxn6s3OnhDop5z1x7CfvB4ORd7Pfk-o580rnoaXePJyMb8hcsSEFxZU0GOS7r16uOCkCwytheIMd4kMUGBL_2GXbU4fUwGRxZSFWtY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+</main>
+<footer class="mt-8 text-center">
+<p class="font-label text-label text-white/60">© 2024 Dinas Pariwisata Kota Baubau. Seluruh Hak Cipta Dilindungi.</p>
+</footer>
+<script>
+        function switchTab(tab) {
+            const btnMasuk = document.getElementById('btn-masuk');
+            const btnDaftar = document.getElementById('btn-daftar');
+            const formMasuk = document.getElementById('form-masuk');
+            const formDaftar = document.getElementById('form-daftar');
+
+            if (tab === 'masuk') {
+                btnMasuk.classList.add('border-primary', 'text-primary');
+                btnMasuk.classList.remove('border-transparent', 'text-on-surface-variant');
+                btnDaftar.classList.add('border-transparent', 'text-on-surface-variant');
+                btnDaftar.classList.remove('border-primary', 'text-primary');
+                formMasuk.classList.remove('hidden');
+                formDaftar.classList.add('hidden');
+            } else {
+                btnDaftar.classList.add('border-primary', 'text-primary');
+                btnDaftar.classList.remove('border-transparent', 'text-on-surface-variant');
+                btnMasuk.classList.add('border-transparent', 'text-on-surface-variant');
+                btnMasuk.classList.remove('border-primary', 'text-primary');
+                formDaftar.classList.remove('hidden');
+                formMasuk.classList.add('hidden');
+            }
+        }
+
+        function selectPartner(element) {
+            document.querySelectorAll('.partner-option').forEach(opt => {
+                opt.classList.remove('partner-card-active', 'ring-2', 'ring-primary/20');
+                opt.classList.add('border-outline-variant/30');
+            });
+            element.classList.add('partner-card-active', 'ring-2', 'ring-primary/20');
+            element.classList.remove('border-outline-variant/30');
+        }
+
+        // Simple enter animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.8s ease-out';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body></html>

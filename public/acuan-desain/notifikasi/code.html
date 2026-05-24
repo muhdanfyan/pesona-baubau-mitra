@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notification Center - Pesona Baubau Digital Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "secondary-container": "#fedb9b",
+                        "primary": "#003b5a",
+                        "on-secondary-container": "#795f2b",
+                        "primary-container": "#1a5276",
+                        "tertiary-fixed": "#ffddb3",
+                        "on-tertiary-container": "#eab66d",
+                        "inverse-on-surface": "#f7f0e6",
+                        "tertiary-fixed-dim": "#f2bd74",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "on-primary-container": "#94c5ee",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#6b4604",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fff8f1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "outline": "#72787f",
+                        "surface-container-highest": "#e8e1d8",
+                        "surface-container": "#f4ede3",
+                        "outline-variant": "#c1c7cf",
+                        "surface-dim": "#e0d9d0",
+                        "primary-fixed": "#cbe6ff",
+                        "on-secondary-fixed-variant": "#5a4312",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#4d3100",
+                        "inverse-primary": "#9bccf6",
+                        "on-tertiary-fixed": "#291800",
+                        "inverse-surface": "#33302a",
+                        "secondary": "#745a27",
+                        "surface": "#fff8f1",
+                        "on-primary-fixed": "#001e30",
+                        "on-surface-variant": "#41474e",
+                        "on-background": "#1e1b16",
+                        "on-secondary-fixed": "#261900",
+                        "secondary-fixed": "#ffdea4",
+                        "surface-variant": "#e8e1d8",
+                        "surface-container-high": "#eee7de",
+                        "on-primary-fixed-variant": "#0e4b6e",
+                        "surface-bright": "#fff8f1",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#faf3e9",
+                        "surface-tint": "#2f6388",
+                        "primary-fixed-dim": "#9bccf6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#e4c285",
+                        "on-surface": "#1e1b16"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "2xl": "32px",
+                        "margin-mobile": "16px",
+                        "xl": "24px",
+                        "sm": "8px",
+                        "xs": "4px",
+                        "margin-desktop": "24px",
+                        "lg": "16px",
+                        "base": "4px",
+                        "3xl": "48px",
+                        "4xl": "64px",
+                        "md": "12px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Inter"],
+                        "body-medium": ["Inter"],
+                        "body": ["Inter"],
+                        "h4": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"],
+                        "button": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                        "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h3-mobile": ["18px", {"lineHeight": "1.4", "fontWeight": "700"}],
+                        "label-mobile": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #F5F3F0; /* The Krem background from style guidance */
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .notification-unread::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #003b5a;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .shadow-light {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen text-on-surface">
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-outline-variant/30 shadow-sm docked full-width top-0 flex justify-between items-center w-full px-margin-mobile h-[64px] z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="anchor">anchor</span>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Pesona Baubau Digital Hub</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors active:opacity-80 active:scale-95 duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors active:opacity-80 active:scale-95 duration-200 relative">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile py-xl">
+<!-- Hero Section / Title -->
+<div class="mb-xl flex justify-between items-end">
+<div>
+<h2 class="font-h1 text-h1 text-primary">Notifications</h2>
+<p class="font-body text-on-surface-variant mt-1">Manage your business updates and alerts.</p>
+</div>
+<button class="text-primary font-button px-4 py-2 hover:bg-primary/5 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="done_all">done_all</span>
+                Mark all as read
+            </button>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-2 mb-lg overflow-x-auto pb-2 scrollbar-hide">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full font-label text-label whitespace-nowrap shadow-sm">All</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full font-label text-label whitespace-nowrap hover:bg-surface-container-highest transition-all">Reports</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full font-label text-label whitespace-nowrap hover:bg-surface-container-highest transition-all">Partnerships</button>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full font-label text-label whitespace-nowrap hover:bg-surface-container-highest transition-all">System</button>
+</div>
+<!-- Notification List -->
+<div class="space-y-4">
+<!-- Unread: Report Status Change -->
+<div class="bg-surface-container-lowest rounded-xl p-lg flex gap-4 shadow-light notification-unread relative cursor-pointer hover:bg-surface transition-all">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="description">description</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-h4 text-h4 text-on-surface">Report Status Updated</h4>
+<span class="font-label text-label text-on-surface-variant">2 mins ago</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">Your "Q3 Tourism Traffic Analysis" report has been reviewed and approved by the regional hub manager.</p>
+<div class="mt-3 flex gap-2">
+<button class="bg-primary text-on-primary font-button px-4 py-2 rounded-lg text-sm hover:opacity-90 transition-opacity">View Report</button>
+<button class="text-on-surface-variant font-button px-4 py-2 rounded-lg text-sm border border-outline-variant hover:bg-surface-container-high transition-all">Dismiss</button>
+</div>
+</div>
+</div>
+<!-- New Partnership Opportunity -->
+<div class="bg-surface-container-lowest rounded-xl p-lg flex gap-4 shadow-light notification-unread relative cursor-pointer hover:bg-surface transition-all">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="handshake">handshake</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-h4 text-h4 text-on-surface">New Partnership Request</h4>
+<span class="font-label text-label text-on-surface-variant">1 hour ago</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">Maritime Adventure Co. has requested a partnership for the upcoming Buton Cultural Festival. Review the proposal.</p>
+</div>
+</div>
+<!-- Read: System Alert -->
+<div class="bg-surface/50 rounded-xl p-lg flex gap-4 border border-outline-variant/20 opacity-80 cursor-pointer hover:bg-surface transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline" data-icon="settings">settings</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-h4 text-h4 text-on-surface-variant">System Maintenance</h4>
+<span class="font-label text-label text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">The portal will undergo scheduled maintenance tonight from 02:00 AM to 04:00 AM WITA. Access may be intermittent.</p>
+</div>
+</div>
+<!-- Partnership Opportunity -->
+<div class="bg-surface/50 rounded-xl p-lg flex gap-4 border border-outline-variant/20 opacity-80 cursor-pointer hover:bg-surface transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline" data-icon="campaign">campaign</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-h4 text-h4 text-on-surface-variant">Holiday Season Promotions</h4>
+<span class="font-label text-label text-on-surface-variant">2 days ago</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">Enroll your services into the annual "Island Bliss" holiday promotion package to increase visibility to 5,000+ potential tourists.</p>
+</div>
+</div>
+<!-- Bento Card for Featured Notification -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-xl">
+<div class="bg-primary-container text-on-primary-container p-xl rounded-2xl flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<span class="bg-on-primary-container/20 px-3 py-1 rounded-full font-label text-label inline-block mb-4">Partner Highlight</span>
+<h3 class="font-h2 text-h2 mb-2">Congratulations, Mitra!</h3>
+<p class="font-body-medium opacity-90">Your profile has been featured in the "Top Maritime Operators" section for August. Expect higher engagement this month.</p>
+</div>
+<div class="mt-xl relative z-10">
+<button class="bg-secondary-fixed text-on-secondary-fixed font-button px-6 py-3 rounded-xl hover:shadow-lg transition-shadow">See Feature Details</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-8 -right-8 text-[120px] opacity-10 group-hover:scale-110 transition-transform duration-500" data-icon="stars">stars</span>
+</div>
+<div class="bg-surface-container-lowest p-xl rounded-2xl flex flex-col justify-between shadow-light border border-outline-variant/10">
+<div>
+<div class="flex items-center gap-2 text-tertiary mb-4">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-label text-label uppercase tracking-wider">Account Security</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Security Checklist Complete</h3>
+<p class="font-body text-on-surface-variant">All your verification documents have been validated. Your mitra status is now "Gold Tier".</p>
+</div>
+<div class="mt-xl flex items-center justify-between">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="shield">shield</span>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock">lock</span>
+</div>
+</div>
+<a class="text-primary font-label text-label hover:underline" href="#">Manage Security</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination / Load More -->
+<div class="mt-2xl flex justify-center pb-32">
+<button class="flex items-center gap-2 font-button text-primary border border-primary px-8 py-3 rounded-xl hover:bg-primary/5 transition-all">
+                Load older notifications
+                <span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for notification clicks
+        document.querySelectorAll('.notification-unread').forEach(item => {
+            item.addEventListener('click', function() {
+                this.classList.remove('notification-unread');
+                this.classList.add('opacity-80');
+                this.classList.add('border', 'border-outline-variant/20');
+                this.style.backgroundColor = '#faf3e9'; // surface-container-low
+                // Simulation of "mark as read"
+                const indicator = document.querySelector('.absolute.top-2.right-2');
+                if (indicator) {
+                    // Logic to decrement or hide global counter if needed
+                }
+            });
+        });
+
+        // Add active interactions as specified in JSON
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.95)';
+                btn.style.opacity = '0.8';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+                btn.style.opacity = '1';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+                btn.style.opacity = '1';
+            });
+        });
+    </script>
+</body></html>

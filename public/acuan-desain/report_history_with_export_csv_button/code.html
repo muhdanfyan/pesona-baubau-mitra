@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#2f6388",
+                        "surface": "#fff8f1",
+                        "primary-fixed": "#cbe6ff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e8e1d8",
+                        "on-secondary-fixed-variant": "#5a4312",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "on-error": "#ffffff",
+                        "secondary": "#745a27",
+                        "secondary-container": "#fedb9b",
+                        "inverse-on-surface": "#f7f0e6",
+                        "on-primary-fixed": "#001e30",
+                        "primary": "#003b5a",
+                        "on-background": "#1e1b16",
+                        "surface-container-high": "#eee7de",
+                        "on-primary-container": "#94c5ee",
+                        "tertiary-fixed": "#ffddb3",
+                        "on-primary-fixed-variant": "#0e4b6e",
+                        "tertiary": "#4d3100",
+                        "primary-container": "#1a5276",
+                        "on-surface-variant": "#41474e",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#33302a",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1e1b16",
+                        "surface-container-low": "#faf3e9",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fff8f1",
+                        "secondary-fixed-dim": "#e4c285",
+                        "on-secondary-container": "#795f2b",
+                        "tertiary-container": "#6b4604",
+                        "on-tertiary-container": "#eab66d",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#fff8f1",
+                        "primary-fixed-dim": "#9bccf6",
+                        "outline-variant": "#c1c7cf",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#e0d9d0",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container": "#f4ede3",
+                        "tertiary-fixed-dim": "#f2bd74",
+                        "surface-container-highest": "#e8e1d8",
+                        "outline": "#72787f",
+                        "on-tertiary-fixed": "#291800",
+                        "inverse-primary": "#9bccf6",
+                        "secondary-fixed": "#ffdea4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "2xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "4xl": "64px",
+                        "xl": "24px",
+                        "3xl": "48px",
+                        "margin-mobile": "16px",
+                        "md": "12px",
+                        "sm": "8px",
+                        "margin-desktop": "24px",
+                        "base": "4px",
+                        "lg": "16px",
+                        "2xl": "32px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-medium": ["Inter"],
+                        "h2": ["Inter"],
+                        "label": ["Inter"],
+                        "h1": ["Inter"],
+                        "h4": ["Inter"],
+                        "h3": ["Inter"],
+                        "button": ["Inter"],
+                        "body": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h2-mobile": ["20px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-mobile": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h3-mobile": ["16px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                        "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f1; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .active-status-chip {
+            background-color: #003b5a;
+            color: #ffffff;
+        }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm flex justify-between items-center w-full px-margin-mobile h-[64px]">
+<div class="flex items-center gap-4">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-high transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Riwayat Laporan</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+</header>
+<main class="max-w-[600px] mx-auto px-margin-mobile mt-gutter">
+<!-- Search Bar -->
+<div class="relative mb-lg">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-outline/70" placeholder="Cari destinasi..." type="text"/>
+</div><div class="mb-lg px-0">
+<button class="w-full h-12 flex items-center gap-3 px-4 bg-surface-container-lowest border border-outline-variant/50 rounded-xl hover:bg-surface-container-high transition-all active:scale-[0.99] group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">calendar_month</span>
+<span class="font-body text-on-surface-variant">Pilih Rentang Tanggal</span>
+<span class="material-symbols-outlined ml-auto text-outline text-[20px]">expand_more</span>
+</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex gap-sm overflow-x-auto scrollbar-hide pb-gutter"><div class="flex flex-col gap-3 w-full px-margin-mobile">
+<div class="flex gap-sm overflow-x-auto scrollbar-hide pb-1">
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-primary-container bg-primary-container text-white transition-colors">Semua</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">Terkirim</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">Diproses</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">Selesai</button>
+</div>
+<div class="flex gap-sm overflow-x-auto scrollbar-hide pb-gutter">
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">Kebersihan</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">Fasilitas</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full font-label text-label border border-outline-variant/30 bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors">Keamanan</button>
+</div><div class="grid grid-cols-3 gap-md mb-lg">
+<button class="bg-primary-container p-lg rounded-2xl flex flex-col items-center justify-center text-on-primary active:scale-95 transition-all duration-200 ring-4 ring-primary/30 shadow-lg cursor-pointer">
+<span class="font-h1 text-h1">24</span>
+<span class="font-label text-[10px] uppercase tracking-wider opacity-90">Total</span>
+</button>
+<button class="bg-secondary-container p-lg rounded-2xl flex flex-col items-center justify-center text-on-secondary-container active:scale-95 transition-all duration-200 hover:bg-secondary-container/90 cursor-pointer">
+<span class="font-h1 text-h1 text-on-secondary-container">12</span>
+<span class="font-label text-[10px] uppercase tracking-wider opacity-90">Diproses</span>
+</button>
+<button class="bg-[#d4edda] p-lg rounded-2xl flex flex-col items-center justify-center text-[#155724] active:scale-95 transition-all duration-200 hover:bg-[#c3e6cb] cursor-pointer">
+<span class="font-h1 text-h1">8</span>
+<span class="font-label text-[10px] uppercase tracking-wider opacity-90">Selesai</span>
+</button>
+</div>
+</div></div><div class="grid grid-cols-3 gap-md mb-lg">
+<div class="bg-primary-container p-lg rounded-2xl flex flex-col items-center justify-center text-on-primary">
+<span class="font-h1 text-h1">24</span>
+<span class="font-label text-[10px] uppercase tracking-wider opacity-90">Total</span>
+</div>
+<div class="bg-secondary-container p-lg rounded-2xl flex flex-col items-center justify-center text-on-secondary-container">
+<span class="font-h1 text-h1 text-on-secondary-container">12</span>
+<span class="font-label text-[10px] uppercase tracking-wider opacity-90">Diproses</span>
+</div>
+<div class="bg-[#d4edda] p-lg rounded-2xl flex flex-col items-center justify-center text-[#155724]">
+<span class="font-h1 text-h1">8</span>
+<span class="font-label text-[10px] uppercase tracking-wider opacity-90">Selesai</span>
+</div>
+</div>
+<!-- Report List -->
+<div class="flex justify-end mb-lg">
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl border border-primary-container text-primary-container hover:bg-primary-container/5 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span class="font-button">Export CSV</span>
+</button>
+</div><div class="flex flex-col gap-lg">
+<!-- Card 1: Diproses -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20 hover:scale-[1.01] transition-transform duration-200">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-h4 text-h4 text-on-surface">Pantai Kamali</h2>
+<span class="font-label text-label text-outline block">Kebersihan</span>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-secondary-container text-on-secondary-container">Diproses</span>
+</div>
+<div class="flex gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-quality close-up photograph of a professional waste management initiative at a sun-drenched coastal area. The scene features bright, warm sunlight typical of a tropical destination, with clean sand and deep blue ocean in the blurred background. The image highlights a modern, clean aesthetic with a focus on environmental preservation and maritime community order." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYfYoHX_JRTXjSO0QMqoQOeXCcAPME-QQblKssAGHw34DabpDX2P0dGAZRqeslSYEma_VFyRqcJfd049KIYhCvzEjyqxSVpwix0df8gxFaB3jL06bIU5k8G4d9d4VXIg2PdHGH_PxfLOJFpguC7DuEvM7h6S73Y2nEvlpW23hjSkoFHK5fJAxdNIf3u_h1wycIrmGv8R8JZqElxO0aKrGBEep-ZaQw-RjDv5rii_5HPE8XTswe5mfQLbvLKz9WAq7ZdQTqL6KEimDi"/>
+</div>
+<div class="flex flex-col justify-between">
+<p class="font-body text-body text-on-surface-variant line-clamp-2">Ditemukan tumpukan sampah plastik di area anjungan sebelah barat setelah acara malam minggu...</p>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label text-[11px]">14 Okt 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Selesai -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20 hover:scale-[1.01] transition-transform duration-200">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-h4 text-h4 text-on-surface">Benteng Keraton</h2>
+<span class="font-label text-label text-outline block">Kerusakan Fasilitas</span>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#d4edda] text-[#155724]">Selesai</span>
+</div>
+<div class="flex gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A detailed architectural photo of a beautifully restored ancient stone wall of a historical fortress. The lighting is warm and golden, reflecting the premium heritage atmosphere of the Baubau cultural hub. The scene is immaculate and quiet, emphasizing the successful maintenance and professional restoration of Indonesian historical monuments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC55UTaeTh-ZlewssBoEyY78XKuoT1xwW_aRWH4he2D84nT1cp6hg8Jl74J3-6VjzSPhx_am3E8dTfJeK40UEFAb36GVzlJW8YCii3gHz34uvP7tjIjvDe2mf9t3-Iy36jhXEjtB2Rqpi4Vlbi-HxPmKCpNGcHDie105C7EeZmVv9sDUVfa1qYGMLfBKNxZ3Bhy-JsRckeR0DWZgVMrv24kAWBVbKsFq3uw6Yr9xL3brenn3jpsKKguR8KAcKkbDKHi0w_4tI9-UcBy"/>
+</div>
+<div class="flex flex-col justify-between">
+<p class="font-body text-body text-on-surface-variant line-clamp-2">Lampu penerangan jalan di gerbang utama mati total, sudah diperbaiki oleh tim teknis...</p>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label text-[11px]">12 Okt 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Terkirim -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20 hover:scale-[1.01] transition-transform duration-200">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-h4 text-h4 text-on-surface">Pemandian Samparona</h2>
+<span class="font-label text-label text-outline block">Kebersihan</span>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary-fixed text-on-primary-fixed">Terkirim</span>
+</div>
+<div class="flex gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A serene landscape of a tropical forest pool with crystal clear water. The aesthetic is clean and crisp, bathed in soft, diffused morning light filtered through green foliage. The mood is calm and professional, showcasing a well-preserved natural destination within a high-end regional tourism network." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByXj3Q9hL1fNE-IPtKUPfLTWvz3lUlk9LVC6gpcXq9sP9Gje6J5oPTJaTCcPFEm5s37t5GLOp7zMZKtYq7uvWVL-RRLg4J-8lu1tCEhNzYnHKDC0dCOjRhD2iKaJXcaxsuvjyrMLDxZc6fJ7JZnn9o8qldsTySroZa70J8R_INpk4Er8PuyIumIImvgNacH4C2nnrI1hQtwD2W7cC9ZX067gyDHJBb5pCo3McWIDA1n3dljoh2cxbEICGWGU1LGThF2UIHgp4kzGjk"/>
+</div>
+<div class="flex flex-col justify-between">
+<p class="font-body text-body text-on-surface-variant line-clamp-2">Laporan rutin mingguan mengenai kondisi air terjun dan ketersediaan tempat sampah di pos 2...</p>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label text-[11px]">10 Okt 2023</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Terkirim -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20 hover:scale-[1.01] transition-transform duration-200">
+<div class="flex justify-between items-start mb-sm">
+<div>
+<h2 class="font-h4 text-h4 text-on-surface">Pantai Nirwana</h2>
+<span class="font-label text-label text-outline block">Layanan Pengunjung</span>
+</div>
+<span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary-fixed text-on-primary-fixed">Terkirim</span>
+</div>
+<div class="flex gap-md">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional, bright, and airy photograph of a turquoise beach shoreline under a clear sky. The colors are vibrant yet sophisticated, leaning into a maritime corporate aesthetic with deep blues and soft krem sands. The lighting is high-key and modern, emphasizing the luxury and quality of the coastal tourism experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSpdk-N3QtGY7cGyK047MifMxDj6ndQW8NtFjBtoVuu_ZejdqxeCOkG1aqkteQS-d76l9iF1ZBYXsjvrmog33cl0JG1PSUM2qdW9LeWF3xcqcQpc9a_2ZPsPRbZ0X0sC5dgGkgTWao71cdosy1DN_qSW1L3BY9tvVUEgfm44lN1z_ofIMjBp2e08vQqatbhXMlOPVP_ouowI5vUG6sedYCbmDEWNxkd8B7eDB0VKWUBEVY5wjsCuUB2gPWboIEsKTUVM3BDWJugH-k"/>
+</div>
+<div class="flex flex-col justify-between">
+<p class="font-body text-body text-on-surface-variant line-clamp-2">Saran penambahan papan informasi digital di pintu masuk utama untuk jadwal pasang surut...</p>
+<div class="flex items-center gap-1 text-outline">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span class="font-label text-[11px]">08 Okt 2023</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-all active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90 duration-150 p-2 rounded-lg" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</a>
+</nav>
+<!-- Script for interaction -->
+<script>
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('click', (e) => {
+                // Micro-interaction logic can go here
+                if(elem.classList.contains('active-status-chip')) return;
+                
+                // If it's a filter chip, handle toggle (visual only for prototype)
+                if(elem.parentElement.classList.contains('overflow-x-auto')) {
+                    document.querySelectorAll('.active-status-chip').forEach(active => {
+                        active.classList.remove('active-status-chip');
+                    });
+                    elem.classList.add('active-status-chip');
+                }
+            });
+        });
+    </script>
+</body></html>

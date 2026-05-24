@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #F5F3F0; /* Krem base layer as per Style Guidance */
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#f2bd74",
+                      "on-surface-variant": "#41474e",
+                      "surface-tint": "#2f6388",
+                      "on-error-container": "#93000a",
+                      "inverse-surface": "#33302a",
+                      "tertiary-fixed": "#ffddb3",
+                      "on-tertiary-fixed": "#291800",
+                      "on-surface": "#1e1b16",
+                      "on-primary": "#ffffff",
+                      "outline": "#72787f",
+                      "primary-fixed-dim": "#9bccf6",
+                      "surface-bright": "#fff8f1",
+                      "primary": "#003b5a",
+                      "on-background": "#1e1b16",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#261900",
+                      "tertiary-container": "#6b4604",
+                      "background": "#fff8f1",
+                      "on-tertiary-fixed-variant": "#633f00",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#f4ede3",
+                      "primary-container": "#1a5276",
+                      "on-secondary-fixed-variant": "#5a4312",
+                      "on-primary-fixed": "#001e30",
+                      "surface-container-high": "#eee7de",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c1c7cf",
+                      "primary-fixed": "#cbe6ff",
+                      "on-secondary-container": "#795f2b",
+                      "secondary": "#745a27",
+                      "surface-container-low": "#faf3e9",
+                      "on-tertiary-container": "#eab66d",
+                      "on-primary-fixed-variant": "#0e4b6e",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#4d3100",
+                      "secondary-fixed": "#ffdea4",
+                      "secondary-container": "#fedb9b",
+                      "surface-container-highest": "#e8e1d8",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#9bccf6",
+                      "surface": "#fff8f1",
+                      "surface-variant": "#e8e1d8",
+                      "on-primary-container": "#94c5ee",
+                      "surface-dim": "#e0d9d0",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#e4c285",
+                      "inverse-on-surface": "#f7f0e6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "4xl": "64px",
+                      "sm": "8px",
+                      "margin-desktop": "24px",
+                      "xs": "4px",
+                      "2xl": "32px",
+                      "lg": "16px",
+                      "gutter": "16px",
+                      "xl": "24px",
+                      "margin-mobile": "16px",
+                      "md": "12px",
+                      "3xl": "48px"
+              },
+              "fontFamily": {
+                      "h4": ["Inter"],
+                      "body": ["Inter"],
+                      "h2": ["Inter"],
+                      "h3": ["Inter"],
+                      "body-medium": ["Inter"],
+                      "label": ["Inter"],
+                      "button": ["Inter"],
+                      "h1": ["Inter"]
+              },
+              "fontSize": {
+                      "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                      "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24 md:pb-0">
+<!-- Top AppBar Component -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant/30 shadow-sm flex justify-between items-center w-full px-margin-mobile h-[64px] z-50 sticky top-0">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="anchor">anchor</span>
+<div class="flex flex-col">
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Nirwana Buton Resort</h1>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high transition-colors rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed overflow-hidden hidden md:block">
+<img alt="Admin Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a boutique hotel manager in a clean, modern setting. The lighting is soft and natural, reflecting a high-end corporate hospitality aesthetic. The background is slightly blurred with warm, neutral tones that align with a premium coastal resort brand identity. The individual wears professional attire, conveying authority and warm service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtaHNsB_XYG8rKD_9mQrK2B3ApXpRUTJNdC2LiY6tj57aX2h8VFBlOtIRCwkTthqv4Vw8ctAnA5eAlU2uBllKVrj3u0UAalEhncDtiRkV5NxPJ6bi2k9O9WWe8TABZWXKaMEckkE45hCzJH6pBZPcXfaZuFGkX3CdiOCAzmYT6Ryp_3192Hl9_tcZWeeKfQ2JOau24WuDpuSasYiIQWoI0JXm473M7FCBbWJoLQiHeFwL239J4hHUXhiIkA8kYToep4tsQEkY-UL_b"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1200px] mx-auto px-margin-mobile py-lg">
+<!-- Welcome & Quick Menu (Desktop Style) -->
+<div class="mb-xl">
+<h2 class="font-h2 text-h2 mb-md text-on-surface">Halo, Selamat Pagi!</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<button class="flex items-center gap-3 bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:bg-primary-container hover:text-on-primary-container transition-all group">
+<span class="material-symbols-outlined p-2 bg-primary/10 rounded-lg group-hover:bg-white/20" data-icon="bed">bed</span>
+<span class="font-button text-button">Kelola Kamar</span>
+</button>
+<button class="flex items-center gap-3 bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:bg-primary-container hover:text-on-primary-container transition-all group">
+<span class="material-symbols-outlined p-2 bg-primary/10 rounded-lg group-hover:bg-white/20" data-icon="calendar_month">calendar_month</span>
+<span class="font-button text-button">Reservasi</span>
+</button>
+<button class="flex items-center gap-3 bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:bg-primary-container hover:text-on-primary-container transition-all group">
+<span class="material-symbols-outlined p-2 bg-primary/10 rounded-lg group-hover:bg-white/20" data-icon="bar_chart">bar_chart</span>
+<span class="font-button text-button">Laporan</span>
+</button>
+<button class="flex items-center gap-3 bg-surface-container-lowest p-md rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:bg-primary-container hover:text-on-primary-container transition-all group">
+<span class="material-symbols-outlined p-2 bg-primary/10 rounded-lg group-hover:bg-white/20" data-icon="person">person</span>
+<span class="font-button text-button">Profil</span>
+</button>
+</div>
+</div>
+<!-- Stats Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<div class="bg-primary-container text-on-primary-container p-xl rounded-2xl shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label text-label opacity-80">Kamar Terisi</p>
+<h3 class="text-[32px] font-bold mt-xs">24</h3>
+<p class="font-label text-[10px] mt-xs">+2 dari kemarin</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-2 -right-2 text-[80px] opacity-10" data-icon="door_front">door_front</span>
+</div>
+<div class="bg-secondary-container text-on-secondary-container p-xl rounded-2xl shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label text-label opacity-80 text-on-secondary-fixed-variant">Kamar Tersedia</p>
+<h3 class="text-[32px] font-bold mt-xs text-on-secondary-fixed-variant">12</h3>
+<p class="font-label text-[10px] mt-xs text-on-secondary-fixed-variant">Siap huni</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-2 -right-2 text-[80px] opacity-10" data-icon="check_circle">check_circle</span>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-xl rounded-2xl shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-label text-label opacity-80 text-on-tertiary-fixed-variant">Permintaan Baru</p>
+<h3 class="text-[32px] font-bold mt-xs text-on-tertiary-fixed-variant">5</h3>
+<p class="font-label text-[10px] mt-xs text-on-tertiary-fixed-variant">Butuh konfirmasi</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-2 -right-2 text-[80px] opacity-10" data-icon="notification_important">notification_important</span>
+</div>
+</div>
+<!-- Main Content Area: Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Today's Reservations (List) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] p-xl">
+<div class="flex justify-between items-center mb-xl">
+<h3 class="font-h3 text-h3 text-on-surface">Reservasi Hari Ini</h3>
+<button class="text-primary font-button text-button hover:underline">Lihat Semua</button>
+</div>
+<div class="space-y-lg">
+<!-- Reservation Item 1 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-lg border border-outline-variant/30 rounded-xl hover:border-primary/50 transition-colors gap-md">
+<div class="flex items-center gap-lg">
+<div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<h4 class="font-h4 text-h4">Ahmad Sulaiman</h4>
+<p class="font-body text-body text-on-surface-variant">Deluxe Sea View • #RSV-2041</p>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<span class="px-md py-xs bg-primary/10 text-primary rounded-full font-label text-label">Check-in</span>
+<div class="flex items-center gap-sm">
+<button class="px-lg py-2 bg-primary text-on-primary rounded-lg font-button text-button hover:opacity-90 transition-all active:scale-95">Konfirmasi</button>
+<button class="px-lg py-2 border border-outline text-on-surface-variant rounded-lg font-button text-button hover:bg-surface-container-high transition-all">Tolak</button>
+</div>
+</div>
+</div>
+<!-- Reservation Item 2 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-lg border border-outline-variant/30 rounded-xl hover:border-primary/50 transition-colors gap-md">
+<div class="flex items-center gap-lg">
+<div class="w-12 h-12 bg-secondary/5 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<h4 class="font-h4 text-h4">Siti Rahmawati</h4>
+<p class="font-body text-body text-on-surface-variant">Standard Garden • #RSV-2039</p>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<span class="px-md py-xs bg-secondary/10 text-secondary rounded-full font-label text-label">Stay</span>
+<div class="flex items-center gap-sm">
+<button class="px-lg py-2 bg-primary text-on-primary rounded-lg font-button text-button hover:opacity-90 transition-all">Konfirmasi</button>
+<button class="px-lg py-2 border border-outline text-on-surface-variant rounded-lg font-button text-button hover:bg-surface-container-high transition-all">Tolak</button>
+</div>
+</div>
+</div>
+<!-- Reservation Item 3 -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-lg border border-outline-variant/30 rounded-xl hover:border-primary/50 transition-colors gap-md">
+<div class="flex items-center gap-lg">
+<div class="w-12 h-12 bg-error-container/10 rounded-full flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<h4 class="font-h4 text-h4">Budi Handoko</h4>
+<p class="font-body text-body text-on-surface-variant">Suite President • #RSV-2035</p>
+</div>
+</div>
+<div class="flex items-center gap-xl">
+<span class="px-md py-xs bg-error-container text-on-error-container rounded-full font-label text-label">Check-out</span>
+<div class="flex items-center gap-sm">
+<button class="px-lg py-2 bg-primary text-on-primary rounded-lg font-button text-button hover:opacity-90 transition-all">Konfirmasi</button>
+<button class="px-lg py-2 border border-outline text-on-surface-variant rounded-lg font-button text-button hover:bg-surface-container-high transition-all">Tolak</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Facilities & Settings -->
+<div class="lg:col-span-4 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] p-xl">
+<h3 class="font-h3 text-h3 text-on-surface mb-xl">Fasilitas Aktif</h3>
+<div class="space-y-md">
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="wifi">wifi</span>
+<span class="font-body-medium text-body-medium">Wi-Fi Gratis</span>
+</div>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="ac_unit">ac_unit</span>
+<span class="font-body-medium text-body-medium">Air Conditioning</span>
+</div>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+<span class="font-body-medium text-body-medium">Breakfast Include</span>
+</div>
+<div class="relative">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="local_parking">local_parking</span>
+<span class="font-body-medium text-body-medium">Parkir Luas</span>
+</div>
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-6 bg-outline-variant rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Quick Insight Card -->
+<div class="bg-surface-container rounded-2xl p-xl border border-outline-variant/20">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<h4 class="font-h4 text-h4 mb-xs">Tips Hari Ini</h4>
+<p class="font-body text-body text-on-surface-variant">Update ketersediaan kamar Anda untuk akhir pekan ini guna meningkatkan visibilitas di halaman utama pencarian.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Component (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-primary font-bold active-nav" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</a>
+</nav>
+<!-- FAB for Desktop/Mobile (Contextual) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="absolute right-full mr-4 bg-primary text-on-primary px-3 py-1 rounded-lg text-sm font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Tambah Kamar</span>
+</button>
+<script>
+        // Simple Interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.innerText === 'Konfirmasi') {
+                    const row = this.closest('.flex-col.md\\:flex-row');
+                    row.style.opacity = '0.5';
+                    row.style.pointerEvents = 'none';
+                    this.innerText = 'Terkonfirmasi';
+                    this.className = 'px-lg py-2 bg-secondary text-on-primary rounded-lg font-button text-button';
+                }
+            });
+        });
+    </script>
+</body></html>

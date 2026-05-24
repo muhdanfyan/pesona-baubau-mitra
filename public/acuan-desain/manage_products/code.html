@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#f2bd74",
+                    "on-surface-variant": "#41474e",
+                    "surface-tint": "#2f6388",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#33302a",
+                    "tertiary-fixed": "#ffddb3",
+                    "on-tertiary-fixed": "#291800",
+                    "on-surface": "#1e1b16",
+                    "on-primary": "#ffffff",
+                    "outline": "#72787f",
+                    "primary-fixed-dim": "#9bccf6",
+                    "surface-bright": "#fff8f1",
+                    "primary": "#003b5a",
+                    "on-background": "#1e1b16",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#261900",
+                    "tertiary-container": "#6b4604",
+                    "background": "#fff8f1",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "on-secondary": "#ffffff",
+                    "surface-container": "#f4ede3",
+                    "primary-container": "#1a5276",
+                    "on-secondary-fixed-variant": "#5a4312",
+                    "on-primary-fixed": "#001e30",
+                    "surface-container-high": "#eee7de",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c1c7cf",
+                    "primary-fixed": "#cbe6ff",
+                    "on-secondary-container": "#795f2b",
+                    "secondary": "#745a27",
+                    "surface-container-low": "#faf3e9",
+                    "on-tertiary-container": "#eab66d",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#4d3100",
+                    "secondary-fixed": "#ffdea4",
+                    "secondary-container": "#fedb9b",
+                    "surface-container-highest": "#e8e1d8",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#9bccf6",
+                    "surface": "#fff8f1",
+                    "surface-variant": "#e8e1d8",
+                    "on-primary-container": "#94c5ee",
+                    "surface-dim": "#e0d9d0",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#e4c285",
+                    "inverse-on-surface": "#f7f0e6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "4xl": "64px",
+                    "sm": "8px",
+                    "margin-desktop": "24px",
+                    "xs": "4px",
+                    "2xl": "32px",
+                    "lg": "16px",
+                    "gutter": "16px",
+                    "xl": "24px",
+                    "margin-mobile": "16px",
+                    "md": "12px",
+                    "3xl": "48px"
+            },
+            "fontFamily": {
+                    "h4": ["Inter"],
+                    "body": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "body-medium": ["Inter"],
+                    "label": ["Inter"],
+                    "button": ["Inter"],
+                    "h1": ["Inter"]
+            },
+            "fontSize": {
+                    "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-toggle {
+            transform: translateX(100%);
+            background-color: #ffffff;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c7cf;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-outline-variant/30 shadow-sm flex justify-between items-center w-full px-margin-mobile h-[64px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="anchor">anchor</span>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Pesona Baubau Digital Hub</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="px-margin-mobile pt-lg">
+<!-- Header Section -->
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-h2 text-h2 text-on-surface">Produk Saya</h2>
+<button class="bg-primary-container text-white px-lg py-md rounded-xl font-button text-button flex items-center gap-sm active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                Tambah Produk
+            </button>
+</div>
+<!-- Search and Filter Sticky Container -->
+<div class="space-y-md mb-xl">
+<!-- Search Bar -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 h-12 bg-white border border-outline-variant/50 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all font-body text-body" placeholder="Cari produk Anda..." type="text"/>
+</div>
+<!-- Horizontal Filter Chips -->
+<div class="flex gap-sm overflow-x-auto custom-scrollbar pb-2 no-scrollbar">
+<button class="bg-primary text-white px-lg h-9 rounded-full font-label text-label shrink-0 transition-colors">Semua</button>
+<button class="bg-white border border-outline-variant/50 text-on-surface-variant px-lg h-9 rounded-full font-label text-label shrink-0 hover:bg-surface-container-high transition-colors">Aktif</button>
+<button class="bg-white border border-outline-variant/50 text-on-surface-variant px-lg h-9 rounded-full font-label text-label shrink-0 hover:bg-surface-container-high transition-colors">Nonaktif</button>
+<button class="bg-white border border-outline-variant/50 text-on-surface-variant px-lg h-9 rounded-full font-label text-label shrink-0 hover:bg-surface-container-high transition-colors">Habis</button>
+</div>
+</div>
+<!-- Product List -->
+<div class="space-y-lg">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-xl p-md flex gap-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img alt="Tenun Buton" class="w-full h-full object-cover" data-alt="A detailed close-up shot of traditional hand-woven Tenun Buton fabric from Baubau, featuring intricate geometric patterns in deep blue, gold, and earthy tones. The lighting is soft and natural, highlighting the tactile texture of the threads. The background is a clean, minimalist studio setting that matches the warm Krem aesthetic of the digital hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHrU9DKu0om73m9saTBZDsuVorVT36X68P5mC-2daCz09O52RYYvmhS7E9q9D4g-qkU83Zb5WGWVJrz21ibq1OwIqgmuAlyhqiaKH7KlNZB60_3fQ7pyA0rZqB8gvaRX2SeCxKys4rd-f59rxUc2W8tCYYZiHetIN-BZptGQj_f8LPRRZDn4alMegWLiyV7TlHrlfM0JdXRmD5fWmwtgYrBYaiTYyF2rbcc6mc2M1lRQxkYKaKni8yocXDTi3a3D090ZmARJvad9Bl"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<h4 class="font-h4 text-h4 text-on-surface truncate">Kain Tenun Buton Motif Kamooru</h4>
+<p class="font-h4 text-h4 text-primary mt-xs">Rp 450.000</p>
+<p class="font-label text-label text-outline mt-1">Stok: 12 unit</p>
+</div>
+<div class="flex items-center gap-md mt-sm">
+<button class="text-outline hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-end justify-between py-1">
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="sr-only peer" id="toggle-1" type="checkbox"/>
+<label class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-outline-variant/30 rounded-full transition duration-300 peer-checked:bg-primary" for="toggle-1"></label>
+<span class="absolute left-1 bottom-1 bg-white w-4 h-4 rounded-full transition duration-300 transform peer-checked:translate-x-4"></span>
+</div>
+<span class="font-label text-label text-primary font-bold">Aktif</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-xl p-md flex gap-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0 grayscale">
+<img alt="Madu Hutan" class="w-full h-full object-cover" data-alt="A premium glass jar of wild forest honey from Southeast Sulawesi, placed on a rustic wooden surface with a soft-focus forest background. The amber liquid glows under warm, golden hour lighting, reflecting a sense of luxury and authenticity. The overall visual style is clean, editorial, and professional, aligning with a high-end corporate tourism platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwhZCiE5yUg5Cne4aXIiz05QvC0dFlgxk7blscENQW-KbTn2xO5lIvNiE1pcfjZvIP2BfyoEJZISWTsUL17odFm2fcXMX2v4GZ1Bu6Vv-iurIXCZmXOYak0Mr-uneY3jkVvIXLi_L3LDhDieppdwflRQ-EaLnwKh6rSIVUARYROEzgcw0LQ-fEFT3YxtfHM9UaQXc6FoaYn3hK1iMtnlc7CIOElW1LHntwvUcTIgky31JYTKyT6UwGzoHeSd8HWPix2sGXI1hjET5P"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<h4 class="font-h4 text-h4 text-on-surface truncate">Madu Hutan Asli Buton 250ml</h4>
+<p class="font-h4 text-h4 text-primary mt-xs">Rp 85.000</p>
+<p class="font-label text-label text-outline mt-1">Stok: 0 unit</p>
+</div>
+<div class="flex items-center gap-md mt-sm">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-end justify-between py-1">
+<div class="relative inline-block w-10 h-6">
+<input class="sr-only peer" id="toggle-2" type="checkbox"/>
+<label class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-outline-variant/30 rounded-full transition duration-300 peer-checked:bg-primary" for="toggle-2"></label>
+<span class="absolute left-1 bottom-1 bg-white w-4 h-4 rounded-full transition duration-300 transform peer-checked:translate-x-4"></span>
+</div>
+<span class="font-label text-label text-outline">Nonaktif</span>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-xl p-md flex gap-md shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20">
+<div class="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+<img alt="Miniatur Kapal" class="w-full h-full object-cover" data-alt="Exquisitely crafted wooden miniature of a traditional Pinisi boat, showcasing fine craftsmanship and detail. The boat sits on a polished dark wood base, illuminated by a soft spotlight that creates dramatic yet elegant shadows. The background is a sophisticated neutral tone, emphasizing the professional and maritime-inspired visual identity of the Pesona Baubau Hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrhRiQCNFnT31W9U_9icUobF7ZAZEh0S6ak3tRhZvGxRqpGwSbuHtRfVFXCyEhjIy3fZN3U0CJgTTAA3_EZrw_MaNY5KLZHl4NU8r6f78DvNUxGvot1k7vvkZRXy-_zkqozCNbht-zwxaZ0e6cfxSMnDbyx4x27qrPyiaf6rpX1JDfU7f21lpZKtHVY7FSZtkWgCYY7gwKMVngQ-M9fh8SgwHFWrmJFDhnZKgZG50XWvoPohUUndqNxqWMETNeu1CEDl9sRfg3lEQ9"/>
+</div>
+<div class="flex-1 min-w-0 flex flex-col justify-between">
+<div>
+<h4 class="font-h4 text-h4 text-on-surface truncate">Miniatur Kapal Pinisi Kayu Jati</h4>
+<p class="font-h4 text-h4 text-primary mt-xs">Rp 1.250.000</p>
+<p class="font-label text-label text-outline mt-1">Stok: 3 unit</p>
+</div>
+<div class="flex items-center gap-md mt-sm">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="edit">edit</span>
+</button>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-end justify-between py-1">
+<div class="relative inline-block w-10 h-6">
+<input checked="" class="sr-only peer" id="toggle-3" type="checkbox"/>
+<label class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-outline-variant/30 rounded-full transition duration-300 peer-checked:bg-primary" for="toggle-3"></label>
+<span class="absolute left-1 bottom-1 bg-white w-4 h-4 rounded-full transition duration-300 transform peer-checked:translate-x-4"></span>
+</div>
+<span class="font-label text-label text-primary font-bold">Aktif</span>
+</div>
+</div>
+</div>
+<!-- Quick Summary Stats -->
+<div class="mt-2xl grid grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-lg rounded-xl">
+<span class="font-label text-on-surface-variant">Total Produk</span>
+<p class="font-h2 text-primary">24</p>
+</div>
+<div class="bg-surface-container-low p-lg rounded-xl">
+<span class="font-label text-on-surface-variant">Habis Stok</span>
+<p class="font-h2 text-error">2</p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-label">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label text-label">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-label">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 py-1 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label">Account</span>
+</a>
+</nav>
+<script>
+        // Simple Micro-interaction for Toggles
+        document.querySelectorAll('input[type="checkbox"]').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const statusLabel = this.closest('.flex-col').querySelector('span.text-label');
+                if (this.checked) {
+                    statusLabel.textContent = 'Aktif';
+                    statusLabel.className = 'font-label text-label text-primary font-bold';
+                } else {
+                    statusLabel.textContent = 'Nonaktif';
+                    statusLabel.className = 'font-label text-label text-outline';
+                }
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+    </script>
+</body></html>

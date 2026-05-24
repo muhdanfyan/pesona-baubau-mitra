@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profil Mitra - Pesona Baubau Digital Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            background-color: #fff8f1; /* Krem base from design system */
+        }
+        .profile-card-shadow {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffdea4",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#faf3e9",
+                    "on-secondary-container": "#795f2b",
+                    "inverse-primary": "#9bccf6",
+                    "on-background": "#1e1b16",
+                    "surface-tint": "#2f6388",
+                    "surface-dim": "#e0d9d0",
+                    "secondary": "#745a27",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#cbe6ff",
+                    "on-surface": "#1e1b16",
+                    "on-secondary-fixed-variant": "#5a4312",
+                    "surface-bright": "#fff8f1",
+                    "primary": "#003b5a",
+                    "background": "#fff8f1",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#f4ede3",
+                    "surface": "#fff8f1",
+                    "tertiary-fixed": "#ffddb3",
+                    "tertiary": "#4d3100",
+                    "secondary-fixed-dim": "#e4c285",
+                    "surface-container-high": "#eee7de",
+                    "on-primary-fixed": "#001e30",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "secondary-container": "#fedb9b",
+                    "inverse-surface": "#33302a",
+                    "on-tertiary-fixed": "#291800",
+                    "on-primary-container": "#94c5ee",
+                    "on-surface-variant": "#41474e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#6b4604",
+                    "surface-container-highest": "#e8e1d8",
+                    "primary-container": "#1a5276",
+                    "tertiary-fixed-dim": "#f2bd74",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "outline": "#72787f",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "inverse-on-surface": "#f7f0e6",
+                    "primary-fixed-dim": "#9bccf6",
+                    "outline-variant": "#c1c7cf",
+                    "on-secondary-fixed": "#261900",
+                    "on-tertiary-container": "#eab66d",
+                    "surface-variant": "#e8e1d8",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "base": "4px",
+                    "sm": "8px",
+                    "md": "12px",
+                    "4xl": "64px",
+                    "margin-desktop": "24px",
+                    "2xl": "32px",
+                    "xs": "4px",
+                    "xl": "24px",
+                    "margin-mobile": "16px",
+                    "lg": "16px",
+                    "3xl": "48px"
+            },
+            "fontFamily": {
+                    "label": ["Inter"],
+                    "h4": ["Inter"],
+                    "body-medium": ["Inter"],
+                    "button": ["Inter"],
+                    "h3": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "body": ["Inter"]
+            },
+            "fontSize": {
+                    "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-mobile": ["11px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "h3-mobile": ["16px", {"lineHeight": "1.4", "fontWeight": "700"}]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-4xl">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant/30 shadow-sm fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile h-[64px]">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="anchor">anchor</span>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Pesona Baubau Digital Hub</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors active:opacity-80 active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</header>
+<main class="pt-[80px] px-margin-mobile max-w-2xl mx-auto space-y-xl">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center py-xl">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full border-4 border-white shadow-md overflow-hidden bg-surface-container-high">
+<img alt="Partner Profile" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a smiling Indonesian man in a modern business-casual batik shirt. The lighting is soft and natural, with a blurred warm-toned office interior in the background that complements the Krem and Sea Blue color palette of the brand. The aesthetic is clean, trustworthy, and evokes high-end professional tourism hospitality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsdE3OxDrMKIm-VLRfoQGCOcSLoauahQFroDKulakcPEm6ufKr7BaT4WgI5My2lW-2X_wGwwI47Xe3ZsKg7FwWYOnc_nhSikL0l1eI7-IBSB1fojMn7GEZ5DjdwtueeJ5a_8I-9iJngak6RlxoTBCAxD1FvkmrU9YoSiYAhivi8dhv18QPFUPN3GrYAhsihRElqMWKcUtEnbD5Sibzrr4Wi2Q4He86SmRYis9ibeNoPRrcGJ77tg3_WDFSs7S_uB3I_RgLGG_fWRPj"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-base rounded-full shadow-lg border-2 border-white transition-transform active:scale-90">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="mt-md text-center">
+<h2 class="font-h2 text-h2 text-primary">Andi Pratama</h2>
+<p class="font-body-medium text-on-surface-variant">Mitra Pengelola • Pokdarwis Buton</p>
+<div class="inline-flex items-center mt-sm px-md py-1 bg-secondary-container text-on-secondary-fixed-variant rounded-full text-label">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                    Terverifikasi
+                </div>
+</div>
+</section>
+<!-- Account Settings List -->
+<div class="space-y-md">
+<h3 class="font-h4 text-h4 text-on-surface px-base">Pengaturan Akun</h3>
+<div class="bg-surface-container-lowest rounded-xl profile-card-shadow overflow-hidden">
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<span class="font-body-medium">Edit Profil</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<div class="h-[1px] bg-outline-variant/20 mx-lg"></div>
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</div>
+<span class="font-body-medium">Keamanan &amp; Password</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<div class="h-[1px] bg-outline-variant/20 mx-lg"></div>
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<span class="font-body-medium">Notifikasi</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Help & Support Section -->
+<div class="space-y-md">
+<h3 class="font-h4 text-h4 text-on-surface px-base">Dukungan</h3>
+<div class="bg-surface-container-lowest rounded-xl profile-card-shadow overflow-hidden">
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary/5 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+</div>
+<span class="font-body-medium">Pusat Bantuan</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<div class="h-[1px] bg-outline-variant/20 mx-lg"></div>
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary/5 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+</div>
+<span class="font-body-medium">Tentang Aplikasi</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+<div class="h-[1px] bg-outline-variant/20 mx-lg"></div>
+<a class="flex items-center justify-between p-lg hover:bg-surface-container-high transition-colors active:opacity-80" href="#">
+<div class="flex items-center gap-lg">
+<div class="w-10 h-10 rounded-lg bg-secondary/5 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<span class="font-body-medium">Kebijakan Privasi</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Logout Button -->
+<div class="py-xl">
+<button class="w-full h-12 rounded-xl bg-surface-container-lowest border border-error text-error font-button hover:bg-error-container transition-all flex items-center justify-center gap-sm active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Keluar dari Akun
+            </button>
+<p class="text-center text-label text-outline mt-lg">Versi 2.4.1 (Stable)</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined active-icon" data-icon="person">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</a>
+</nav>
+<script>
+        // Simple visual feedback for active state mapping
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // In a real app, this would navigate. Here we just show the state.
+                document.querySelectorAll('nav a').forEach(l => {
+                    l.classList.remove('text-primary', 'font-bold');
+                    l.classList.add('text-on-surface-variant');
+                    l.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+                });
+                link.classList.add('text-primary', 'font-bold');
+                link.classList.remove('text-on-surface-variant');
+                link.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body></html>

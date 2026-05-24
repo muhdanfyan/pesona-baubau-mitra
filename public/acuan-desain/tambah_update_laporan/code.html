@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tambah Update Laporan - Pokdarwis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Custom scrollbar for better aesthetic */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f4ede3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c7cf;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#ffdea4",
+                      "error-container": "#ffdad6",
+                      "surface-container-low": "#faf3e9",
+                      "on-secondary-container": "#795f2b",
+                      "inverse-primary": "#9bccf6",
+                      "on-background": "#1e1b16",
+                      "surface-tint": "#2f6388",
+                      "surface-dim": "#e0d9d0",
+                      "secondary": "#745a27",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#cbe6ff",
+                      "on-surface": "#1e1b16",
+                      "on-secondary-fixed-variant": "#5a4312",
+                      "surface-bright": "#fff8f1",
+                      "primary": "#003b5a",
+                      "background": "#fff8f1",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#f4ede3",
+                      "surface": "#fff8f1",
+                      "tertiary-fixed": "#ffddb3",
+                      "tertiary": "#4d3100",
+                      "secondary-fixed-dim": "#e4c285",
+                      "surface-container-high": "#eee7de",
+                      "on-primary-fixed": "#001e30",
+                      "on-primary-fixed-variant": "#0e4b6e",
+                      "secondary-container": "#fedb9b",
+                      "inverse-surface": "#33302a",
+                      "on-tertiary-fixed": "#291800",
+                      "on-primary-container": "#94c5ee",
+                      "on-surface-variant": "#41474e",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#6b4604",
+                      "surface-container-highest": "#e8e1d8",
+                      "primary-container": "#1a5276",
+                      "tertiary-fixed-dim": "#f2bd74",
+                      "on-error": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "outline": "#72787f",
+                      "on-tertiary-fixed-variant": "#633f00",
+                      "inverse-on-surface": "#f7f0e6",
+                      "primary-fixed-dim": "#9bccf6",
+                      "outline-variant": "#c1c7cf",
+                      "on-secondary-fixed": "#261900",
+                      "on-tertiary-container": "#eab66d",
+                      "surface-variant": "#e8e1d8",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "base": "4px",
+                      "sm": "8px",
+                      "md": "12px",
+                      "4xl": "64px",
+                      "margin-desktop": "24px",
+                      "2xl": "32px",
+                      "xs": "4px",
+                      "xl": "24px",
+                      "margin-mobile": "16px",
+                      "lg": "16px",
+                      "3xl": "48px"
+              },
+              "fontFamily": {
+                      "label": ["Inter"],
+                      "h4": ["Inter"],
+                      "body-medium": ["Inter"],
+                      "button": ["Inter"],
+                      "h3": ["Inter"],
+                      "h1": ["Inter"],
+                      "h2": ["Inter"],
+                      "body": ["Inter"]
+              },
+              "fontSize": {
+                      "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                      "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                      "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                      "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top App Bar -->
+<header class="bg-surface sticky top-0 z-50 flex items-center justify-between px-lg w-full h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-150 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-h2 text-h2 font-bold text-primary">Tambah Update</h1>
+</div>
+<button class="p-2 hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 duration-150 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</header>
+<main class="max-w-2xl mx-auto px-margin-mobile pt-lg pb-4xl flex flex-col gap-xl">
+<!-- Parent Report Reference (Subtle Context) -->
+<div class="bg-surface-container-low p-lg rounded-xl flex flex-col gap-xs border-l-4 border-secondary shadow-sm">
+<span class="font-label text-label text-secondary uppercase tracking-wider">Update Untuk Laporan</span>
+<p class="font-h4 text-h4 text-on-surface truncate">Perbaikan Fasilitas Dermaga Tradisional</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+<span class="font-label text-label text-on-surface-variant">Dibuat 14 Mar 2024</span>
+</div>
+</div>
+<!-- Update Form Section -->
+<section class="flex flex-col gap-lg">
+<!-- Description Field -->
+<div class="flex flex-col gap-sm">
+<label class="font-h4 text-h4 text-primary px-1" for="update_desc">Deskripsi Update</label>
+<div class="relative">
+<textarea class="w-full min-h-[160px] p-lg bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent text-body outline-none resize-none transition-all placeholder:text-outline" id="update_desc" placeholder="Ceritakan perkembangan terbaru atau tindakan yang telah dilakukan..."></textarea>
+<div class="absolute bottom-3 right-3">
+<span class="text-label font-label text-outline">0/500</span>
+</div>
+</div>
+</div>
+<!-- Upload Photo Section -->
+<div class="flex flex-col gap-sm">
+<label class="font-h4 text-h4 text-primary px-1">Unggah Foto Bukti</label>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-md">
+<!-- Trigger -->
+<label class="aspect-square flex flex-col items-center justify-center border-2 border-dashed border-outline-variant rounded-xl bg-surface-container hover:bg-surface-container-high transition-all cursor-pointer group">
+<input accept="image/*" class="hidden" id="file_upload" multiple="" type="file"/>
+<span class="material-symbols-outlined text-primary text-3xl mb-2 group-hover:scale-110 transition-transform">add_a_photo</span>
+<span class="font-label text-label text-on-surface-variant">Pilih Foto</span>
+</label>
+<!-- Preview Item (Static Example) -->
+<div class="relative aspect-square rounded-xl overflow-hidden group shadow-sm">
+<img alt="Preview 1" class="w-full h-full object-cover" data-alt="A detailed close-up of a rustic wooden dock being repaired by hand under the warm morning sun. The lighting is golden and natural, emphasizing the rich textures of the weathered wood and the maritime atmosphere. The background shows soft blue coastal waters and the gentle silhouette of traditional boats. The aesthetic is warm, authentic, and professional, consistent with a high-end travel and cultural hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf1_n2iUFRjEq2Iog6Iwq3A2uQ6onRkbjwbvJQBQlS2WJPA0IW5r1dMudXSGWzgUJELoSN-OfCBcbGKJVeqmv4PEtaA2OgRb5tzR9GA4HITlsJxFAD_ElCd5SYMcd7BZR7Q7oZDWZtkuhGD9dUY8fDfGigJ7u58nr3MIi-zDGPwlCgdHgtlFimpI0ZjQY04q2LQ2rqnKgwPo_ArH9YIfUAerwsIUgGjJp-FK49ThkUWfu3c26JSH7ilEXTVcrr6Fqj919-d2Fp2Di8"/>
+<button class="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="relative aspect-square rounded-xl overflow-hidden group shadow-sm">
+<img alt="Preview 2" class="w-full h-full object-cover" data-alt="An expansive view of a traditional Indonesian harbor with vibrant blue water and several outrigger boats moored near a newly reinforced pier. The scene is captured in bright, natural daylight with a clear sky, highlighting the corporate modern yet tactile warmth of the maritime environment. The composition focuses on the progress of construction and maintenance, conveying reliability and regional hub prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEMxQ7B9ssRVKOPqRY1wHlBswccFCP3Wimy_JEcrOVasHTi5iIZI7uJrSlBWsrcyR5--tZS99rUGxWzA3bYZSYZ5ni4VvaXFTo97x1YocBd5uc4llLshzqjE_L_XUtFI0ONI4q51eyMcs3fOLG3GH0ZJdsODbX6CMo79DPBxAdQ5jcSy_JMzk9uQL1pszKAP-Tdp8ib2nndrwoo0WMHZQQ213JxpmoAnaVC9EBGe6weMALx_sE41Ylm7XQm5xTx3cdT1qPyrpa3JbT"/>
+<button class="absolute top-2 right-2 bg-black/50 text-white p-1 rounded-full backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<p class="font-label text-label text-outline px-1 italic mt-1">* Maksimal 5 foto, format JPG/PNG (Max 2MB per file).</p>
+</div>
+<!-- Additional Metadata Toggle -->
+<div class="flex items-center justify-between p-lg bg-surface-container-lowest rounded-xl border border-outline-variant/30 mt-2">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<div class="flex flex-col">
+<span class="font-body-medium text-body-medium text-on-surface">Sertakan Lokasi GPS</span>
+<span class="font-label text-label text-outline">Akan membantu tim verifikasi</span>
+</div>
+</div>
+<button class="w-12 h-6 bg-surface-container-highest rounded-full relative transition-colors" id="gps-toggle">
+<span class="w-4 h-4 bg-white rounded-full absolute top-1 left-1 shadow-sm transition-transform" id="toggle-knob"></span>
+</button>
+</div>
+</section>
+<!-- Submit Button -->
+<div class="mt-4 flex flex-col gap-md">
+<button class="h-[48px] bg-primary text-white font-button text-button rounded-xl shadow-lg hover:shadow-xl active:scale-95 transition-all flex items-center justify-center gap-2 w-full">
+<span>Kirim Update</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+<button class="h-[48px] bg-transparent text-primary font-button text-button rounded-xl border border-primary/20 hover:bg-surface-container transition-all w-full">
+                Simpan Sebagai Draft
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation (Hides on this focused task page, but included as per shell logic guidance if top-level, currently suppressed for task focus) -->
+<script>
+        // Micro-interaction for GPS Toggle
+        const gpsBtn = document.getElementById('gps-toggle');
+        const knob = document.getElementById('toggle-knob');
+        let isGpsActive = false;
+
+        gpsBtn.addEventListener('click', () => {
+            isGpsActive = !isGpsActive;
+            if (isGpsActive) {
+                gpsBtn.classList.replace('bg-surface-container-highest', 'bg-secondary');
+                knob.classList.replace('left-1', 'left-7');
+            } else {
+                gpsBtn.classList.replace('bg-secondary', 'bg-surface-container-highest');
+                knob.classList.replace('left-7', 'left-1');
+            }
+        });
+
+        // Textarea counter
+        const textarea = document.getElementById('update_desc');
+        const counter = textarea.nextElementSibling.querySelector('span');
+        textarea.addEventListener('input', (e) => {
+            const length = e.target.value.length;
+            counter.textContent = `${length}/500`;
+            if (length > 450) {
+                counter.classList.replace('text-outline', 'text-error');
+            } else {
+                counter.classList.replace('text-error', 'text-outline');
+            }
+        });
+
+        // Simple feedback on button click
+        const sendBtn = document.querySelector('button.bg-primary');
+        sendBtn.addEventListener('click', () => {
+            const originalContent = sendBtn.innerHTML;
+            sendBtn.innerHTML = `<span class="material-symbols-outlined animate-spin">progress_activity</span> <span>Mengirim...</span>`;
+            sendBtn.classList.add('opacity-80', 'cursor-wait');
+            
+            setTimeout(() => {
+                sendBtn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> <span>Terkirim!</span>`;
+                sendBtn.classList.replace('bg-primary', 'bg-secondary');
+                
+                setTimeout(() => {
+                    sendBtn.innerHTML = originalContent;
+                    sendBtn.classList.replace('bg-secondary', 'bg-primary');
+                    sendBtn.classList.remove('opacity-80', 'cursor-wait');
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body></html>

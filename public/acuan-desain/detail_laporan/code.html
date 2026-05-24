@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c1c7cf",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#1e1b16",
+                    "tertiary-fixed-dim": "#f2bd74",
+                    "tertiary-container": "#6b4604",
+                    "surface-bright": "#fff8f1",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "primary-container": "#1a5276",
+                    "on-surface": "#1e1b16",
+                    "on-secondary-fixed": "#261900",
+                    "secondary": "#745a27",
+                    "secondary-container": "#fedb9b",
+                    "surface-dim": "#e0d9d0",
+                    "surface-tint": "#2f6388",
+                    "inverse-primary": "#9bccf6",
+                    "primary": "#003b5a",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#e4c285",
+                    "surface-container": "#f4ede3",
+                    "surface-variant": "#e8e1d8",
+                    "inverse-surface": "#33302a",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#ffddb3",
+                    "error": "#ba1a1a",
+                    "outline": "#72787f",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "surface-container-highest": "#e8e1d8",
+                    "secondary-fixed": "#ffdea4",
+                    "primary-fixed": "#cbe6ff",
+                    "tertiary": "#4d3100",
+                    "surface-container-low": "#faf3e9",
+                    "on-secondary-fixed-variant": "#5a4312",
+                    "on-tertiary-fixed": "#291800",
+                    "on-secondary-container": "#795f2b",
+                    "inverse-on-surface": "#f7f0e6",
+                    "on-surface-variant": "#41474e",
+                    "on-primary-container": "#94c5ee",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001e30",
+                    "on-tertiary-container": "#eab66d",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eee7de",
+                    "surface": "#fff8f1",
+                    "background": "#fff8f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "8px",
+                    "xl": "12px",
+                    "2xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "2xl": "32px",
+                    "md": "12px",
+                    "base": "4px",
+                    "xl": "24px",
+                    "4xl": "64px",
+                    "xs": "4px",
+                    "margin-desktop": "24px",
+                    "gutter": "16px",
+                    "margin-mobile": "16px",
+                    "lg": "16px",
+                    "3xl": "48px"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "label": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "button": ["Inter"],
+                    "body": ["Inter"],
+                    "h4": ["Inter"],
+                    "body-medium": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F5F3F0; /* Krem background as per guidance */
+            color: #1e1b16;
+            font-family: 'Inter', sans-serif;
+        }
+        .light-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="bg-surface sticky top-0 z-50 docked full-width top-0">
+<div class="flex items-center justify-between px-lg w-full h-16 max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<button class="cursor-pointer active:scale-95 duration-150 hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-h2 text-h2 font-bold text-primary">Detail Laporan</h1>
+</div>
+<button class="cursor-pointer active:scale-95 duration-150 hover:bg-surface-container-high transition-colors p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">more_vert</span>
+</button>
+</div>
+</header>
+<main class="flex-grow max-w-3xl mx-auto w-full px-margin-mobile pb-32">
+<!-- Status Header Card -->
+<div class="mt-lg bg-white rounded-2xl light-shadow p-xl flex items-center justify-between">
+<div class="space-y-xs">
+<p class="font-label text-label text-outline uppercase tracking-wider">Status Laporan</p>
+<div class="inline-flex items-center px-md py-sm bg-tertiary-container/10 border-l-4 border-tertiary rounded-lg">
+<span class="font-h4 text-h4 text-tertiary font-bold">DIPROSES</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-label text-label text-outline">ID Laporan</p>
+<p class="font-body-medium text-body-medium">#KM-141023-092</p>
+</div>
+</div>
+<!-- Main Content Sections -->
+<div class="mt-xl space-y-xl">
+<!-- Report Title & Info -->
+<section class="bg-white rounded-2xl light-shadow p-xl">
+<h2 class="font-h2 text-h2 text-primary mb-md">Tumpukan Sampah Plastik di Area Anjungan</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">category</span>
+<span class="font-body text-body">Kategori: <strong>Kebersihan</strong></span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-body text-body">14 Okt 2023, 08:30 WITA</span>
+</div>
+<div class="flex items-center gap-sm text-on-surface-variant md:col-span-2">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span class="font-body text-body">Pantai Kamali (Zona Utara)</span>
+</div>
+</div>
+<div class="mt-xl pt-xl border-t border-outline-variant/30">
+<p class="font-body text-body leading-relaxed text-on-surface-variant">
+                        Ditemukan tumpukan sampah plastik di area anjungan sebelah utara setelah air pasang. Kondisi ini mengganggu pemandangan dan kenyamanan pengunjung. Diperlukan tindakan pembersihan segera sebelum semakin banyak sampah terbawa kembali ke laut.
+                    </p>
+</div>
+</section>
+<!-- Evidence Photo Gallery -->
+<section class="space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-primary">Bukti Foto</h3>
+<span class="font-label text-label text-outline">3 Foto</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<div class="aspect-square rounded-xl overflow-hidden light-shadow relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A detailed wide shot of Pantai Kamali beach at morning, showing a significant accumulation of colorful plastic waste and debris scattered across the pale sand near the stone embankment. The atmosphere is professional yet urgent, with soft morning light illuminating the environmental issue. The visual style is clean and documentary-like, using a premium color palette of sea blue and warm sand tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARBVLDCmtxjKnPf8o1W4QHAkrygi77ynGdex8jE_QTPoXb6ijBLLm44oFGv2YJq-gS43e_HKhd-N1b1ELrMS9wKgUcOlzLS395Hbua_R2yK2O27UMROIu90ub2nRgVp7xGjEWtdtJFlogfnLn8lOW9qfUwyy0bV_u0rvukAz2znUe5OjU2QEswHjYt1QCu5-f6DkbEoR-4yS2XyD8N_f22AcAOggJpsyFNU8VoYGtLSYqdpZzSYslrRe8rpx54_krHEE7MiFOc5WlO">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden light-shadow relative group cursor-pointer">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A close-up photograph of various plastic bottles and containers piled up against a modern wooden pier at a tropical beach destination. The image captures the texture of the waste and the contrasting beauty of the sea in the background. The lighting is bright and clear, emphasizing the need for maintenance in this tourism ecosystem. Professional photography style with high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6sLF0-3yYn6vM70-egkRvDKnbsb3vNQCa9CGIeUCEAkjb8ma2kwyUPx4zPUu4NxdJa3-jSNXdO-LcoCQOj0nhVan5jhYxA5C2st8cWWZL9DJdIS-0g2DZV5WcV7jHdnFpGktpmVx_Vt2iQtI65N4T21MAQdfdjnnI1P2_6cegGZNpV09VkhU5twt23VX0wzKwvx824y9SuF_5KXiTS3bFzGUXD_aRNISyAI6aANGjlhSlkTHiPjQS4YfA1cSclaHjLn2GOYldF_YL">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="aspect-square rounded-xl overflow-hidden light-shadow relative group cursor-pointer hidden md:block">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An eye-level shot showing a coastal walkway with scattered plastic litter near the seating area of Pantai Kamali. The scene is set under a clear blue sky, highlighting the contrast between the well-maintained public infrastructure and the temporary littering problem. The shot uses a sophisticated editorial perspective, maintaining the corporate modern aesthetic of the regional tourism hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN0DfSY0ufwhSbrdwWf_D44a0x2c8FB3Jcs3cyu8yIdcK4ql7vH-gQpx0WMdWwgYqJ7cUW2Hns3e_Kf6N6ta__Qe2wayP3XW62HHqQ3GVue8sbGaqg4fEQk8XQg_hey6mecfsQLwiIozvuSNlzeaP1aRQ9ed4pBnDsN5B-T_6yyhLv3U4zRaeHCvVFnyvH5vd_ZwcvBaYsnNDMQNj8FmtoAmDdQfAStXCVANFQrUF5nwaU0HNOlyagNfVoQpInh-qvKEsOMTPB0uP3">
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</section>
+<!-- Timeline / History -->
+<section class="bg-white rounded-2xl light-shadow p-xl space-y-xl">
+<h3 class="font-h3 text-h3 text-primary">Riwayat Penanganan</h3>
+<div class="space-y-xl relative">
+<!-- Step 3 (Latest) -->
+<div class="relative flex gap-xl pl-10 pb-8 last:pb-0">
+  <!-- Timeline Line -->
+  <div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30 group-last:hidden"></div>
+  
+  <!-- Timeline Node -->
+  <div class="absolute left-0 top-1.5 w-[24px] h-[24px] bg-primary-container rounded-full border-4 border-white flex items-center justify-center z-10 shadow-[0_0_0_4px_rgba(26,82,118,0.1)]">
+    <div class="w-2 h-2 bg-white rounded-full"></div>
+  </div>
+
+  <!-- Content Card -->
+  <div class="flex-grow bg-surface-container-low p-md rounded-xl border border-outline-variant/10 shadow-sm">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="font-h4 text-h4 text-primary leading-tight">Dalam Proses Koordinasi dengan Dinas Kebersihan</h4>
+      <span class="font-label text-label text-primary font-bold bg-primary/10 px-2 py-0.5 rounded">10:00</span>
+    </div>
+    <p class="font-body text-body text-on-surface-variant">Laporan telah diteruskan ke tim lapangan Dinas Kebersihan untuk penjadwalan armada pengangkut.</p>
+  </div>
+</div>
+
+<!-- Step 2 -->
+<div class="relative flex gap-xl pl-10 pb-8 last:pb-0 group">
+  <!-- Timeline Line -->
+  <div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-outline-variant/30"></div>
+  
+  <!-- Timeline Node -->
+  <div class="absolute left-0 top-1.5 w-[24px] h-[24px] bg-outline-variant rounded-full border-4 border-white z-10"></div>
+
+  <!-- Content Card -->
+  <div class="flex-grow p-md rounded-xl border border-transparent opacity-70">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="font-h4 text-h4 text-on-surface/80">Diverifikasi oleh Admin</h4>
+      <span class="font-label text-label text-outline">09:15</span>
+    </div>
+    <p class="font-body text-body text-on-surface-variant/80">Laporan valid dan telah diverifikasi kebenarannya oleh tim pengelola kawasan.</p>
+  </div>
+</div>
+
+<!-- Step 1 -->
+<div class="relative flex gap-xl pl-10 group">
+  <!-- Timeline Node -->
+  <div class="absolute left-0 top-1.5 w-[24px] h-[24px] bg-outline-variant rounded-full border-4 border-white z-10"></div>
+
+  <!-- Content Card -->
+  <div class="flex-grow p-md rounded-xl border border-transparent opacity-70">
+    <div class="flex justify-between items-start mb-2">
+      <h4 class="font-h4 text-h4 text-on-surface/80">Laporan Terkirim</h4>
+      <span class="font-label text-label text-outline">08:30</span>
+    </div>
+    <p class="font-body text-body text-on-surface-variant/80">Laporan berhasil masuk ke dalam sistem pengaduan Pantai Kamali.</p>
+  </div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.08)] p-lg z-50">
+<div class="max-w-3xl mx-auto flex gap-md">
+<button class="flex-1 h-12 bg-white border border-primary text-primary rounded-xl font-button text-button flex items-center justify-center gap-sm active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                Hubungi Admin
+            </button>
+<button class="flex-1 h-12 bg-primary text-white rounded-xl font-button text-button flex items-center justify-center gap-sm active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                Tambah Update
+            </button>
+</div>
+</div>
+<!-- Hidden Bottom Nav for top-level context adherence -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center h-16 px-4 bg-surface-container-lowest shadow-lg hidden">
+<div class="flex flex-col items-center justify-center text-outline font-bold">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label text-label">Beranda</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label text-label">Laporan</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-label text-label">Kemitraan</span>
+</div>
+<div class="flex flex-col items-center justify-center text-outline">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label">Profil</span>
+</div>
+</nav>
+<script>
+        // Simple micro-interaction for photo gallery preview
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('click', () => {
+                console.log('Opening image preview for: ' + img.src);
+                // Implementation for a real modal would go here
+            });
+        });
+    </script>
+
+
+</body></html>

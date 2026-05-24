@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analisa Dampak - Pesona Baubau Digital Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "secondary-container": "#fedb9b",
+                    "primary": "#003b5a",
+                    "on-secondary-container": "#795f2b",
+                    "primary-container": "#1a5276",
+                    "tertiary-fixed": "#ffddb3",
+                    "on-tertiary-container": "#eab66d",
+                    "inverse-on-surface": "#f7f0e6",
+                    "tertiary-fixed-dim": "#f2bd74",
+                    "on-tertiary-fixed-variant": "#633f00",
+                    "on-primary-container": "#94c5ee",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#6b4604",
+                    "on-tertiary": "#ffffff",
+                    "background": "#fff8f1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "outline": "#72787f",
+                    "surface-container-highest": "#e8e1d8",
+                    "surface-container": "#f4ede3",
+                    "outline-variant": "#c1c7cf",
+                    "surface-dim": "#e0d9d0",
+                    "primary-fixed": "#cbe6ff",
+                    "on-secondary-fixed-variant": "#5a4312",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#4d3100",
+                    "inverse-primary": "#9bccf6",
+                    "on-tertiary-fixed": "#291800",
+                    "inverse-surface": "#33302a",
+                    "secondary": "#745a27",
+                    "surface": "#fff8f1",
+                    "on-primary-fixed": "#001e30",
+                    "on-surface-variant": "#41474e",
+                    "on-background": "#1e1b16",
+                    "on-secondary-fixed": "#261900",
+                    "secondary-fixed": "#ffdea4",
+                    "surface-variant": "#e8e1d8",
+                    "surface-container-high": "#eee7de",
+                    "on-primary-fixed-variant": "#0e4b6e",
+                    "surface-bright": "#fff8f1",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#faf3e9",
+                    "surface-tint": "#2f6388",
+                    "primary-fixed-dim": "#9bccf6",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#e4c285",
+                    "on-surface": "#1e1b16"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "2xl": "32px",
+                    "margin-mobile": "16px",
+                    "xl": "24px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "margin-desktop": "24px",
+                    "lg": "16px",
+                    "base": "4px",
+                    "3xl": "48px",
+                    "4xl": "64px",
+                    "md": "12px"
+            },
+            "fontFamily": {
+                    "h2": ["Inter"],
+                    "body-medium": ["Inter"],
+                    "body": ["Inter"],
+                    "h4": ["Inter"],
+                    "label": ["Inter"],
+                    "h1": ["Inter"],
+                    "button": ["Inter"],
+                    "h3": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                    "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                    "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h3-mobile": ["16px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-mobile": ["10px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fff8f1; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #c1c7cf; border-radius: 10px; }
+        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- Top App Bar -->
+<header class="bg-surface border-b border-outline-variant/30 shadow-sm docked full-width top-0 flex justify-between items-center w-full px-margin-mobile h-[64px] z-50 sticky">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="anchor">anchor</span>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Pesona Baubau Digital Hub</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-container-high transition-colors rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 hover:bg-surface-container-high transition-colors rounded-full text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pt-xl pb-32">
+<!-- Header Section -->
+<div class="mb-xl">
+<h2 class="font-h1 text-h1 text-primary">Analisa Dampak</h2>
+<p class="font-body text-body text-on-surface-variant">Partner Performance &amp; Growth Analytics Dashboard</p>
+</div>
+<!-- Metric Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-xl">
+<!-- Total Visitors -->
+<div class="bg-white rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col justify-between">
+<div>
+<span class="text-on-surface-variant font-label text-label uppercase tracking-wider">Total Visitors</span>
+<h3 class="font-h1 text-h1 text-primary mt-1">24.5k</h3>
+</div>
+<div class="flex items-center text-success mt-2 gap-1 text-green-600 font-body-medium">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>12.3% vs last month</span>
+</div>
+</div>
+<!-- Revenue -->
+<div class="bg-white rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col justify-between">
+<div>
+<span class="text-on-surface-variant font-label text-label uppercase tracking-wider">Monthly Revenue</span>
+<h3 class="font-h1 text-h1 text-primary mt-1">Rp 142M</h3>
+</div>
+<div class="flex items-center text-success mt-2 gap-1 text-green-600 font-body-medium">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span>8.1% vs last month</span>
+</div>
+</div>
+<!-- Active Partners -->
+<div class="bg-primary rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col justify-between text-white">
+<div>
+<span class="text-primary-container font-label text-label uppercase tracking-wider">Active Partners</span>
+<h3 class="font-h1 text-h1 mt-1">84</h3>
+</div>
+<div class="flex items-center mt-2 gap-1 text-primary-fixed-dim font-body-medium">
+<span class="material-symbols-outlined text-sm" data-icon="check_circle">check_circle</span>
+<span>100% Operational</span>
+</div>
+</div>
+<!-- Growth Score -->
+<div class="bg-secondary-container rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col justify-between">
+<div>
+<span class="text-on-secondary-container font-label text-label uppercase tracking-wider">Growth Score</span>
+<h3 class="font-h1 text-h1 text-on-secondary-container mt-1">9.2/10</h3>
+</div>
+<div class="flex items-center mt-2 gap-1 text-on-secondary-container font-body-medium">
+<span class="material-symbols-outlined text-sm" data-icon="star">star</span>
+<span>Top Tier Performance</span>
+</div>
+</div>
+</div>
+<!-- Charts Layout (Asymmetric) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-xl">
+<!-- Main Trend Chart -->
+<div class="lg:col-span-2 bg-white rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] h-[400px] flex flex-col">
+<div class="flex justify-between items-center mb-xl">
+<h4 class="font-h3 text-h3 text-primary">Visitor Trends &amp; Projections</h4>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label text-label hover:bg-outline-variant/20 transition-all">Monthly</button>
+<button class="px-3 py-1 rounded-full bg-primary text-white font-label text-label">Quarterly</button>
+</div>
+</div>
+<div class="flex-grow flex items-end justify-between gap-2 px-2 relative">
+<!-- Fake Chart Visual -->
+<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+<span class="material-symbols-outlined scale-[10]" data-icon="insights">insights</span>
+</div>
+<!-- Bar components -->
+<div class="w-full bg-surface-container rounded-t-lg transition-all hover:bg-primary-container h-[40%]" title="Jan"></div>
+<div class="w-full bg-surface-container rounded-t-lg transition-all hover:bg-primary-container h-[55%]" title="Feb"></div>
+<div class="w-full bg-surface-container rounded-t-lg transition-all hover:bg-primary-container h-[45%]" title="Mar"></div>
+<div class="w-full bg-primary-container rounded-t-lg transition-all h-[75%]" title="Apr"></div>
+<div class="w-full bg-primary rounded-t-lg transition-all h-[95%]" title="May"></div>
+<div class="w-full bg-primary-container rounded-t-lg transition-all h-[80%]" title="Jun"></div>
+<div class="w-full bg-surface-container rounded-t-lg transition-all hover:bg-primary-container h-[60%]" title="Jul"></div>
+<div class="w-full bg-surface-container rounded-t-lg transition-all hover:bg-primary-container h-[70%]" title="Aug"></div>
+</div>
+<div class="flex justify-between mt-4 text-on-surface-variant font-label text-label">
+<span>JAN</span><span>FEB</span><span>MAR</span><span>APR</span><span>MAY</span><span>JUN</span><span>JUL</span><span>AUG</span>
+</div>
+</div>
+<!-- Revenue Growth (Donut Chart Style) -->
+<div class="bg-white rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] h-[400px] flex flex-col">
+<h4 class="font-h3 text-h3 text-primary mb-xl">Revenue by Category</h4>
+<div class="flex-grow flex flex-col items-center justify-center relative">
+<!-- Circular Graphic Container -->
+<div class="w-48 h-48 rounded-full border-[16px] border-primary-container flex items-center justify-center relative">
+<div class="absolute inset-0 border-[16px] border-primary border-r-transparent border-b-transparent rounded-full rotate-45"></div>
+<div class="absolute inset-0 border-[16px] border-secondary-container border-l-transparent border-t-transparent rounded-full -rotate-12"></div>
+<div class="text-center">
+<span class="block font-h2 text-h2 text-primary">Rp 1.4B</span>
+<span class="block font-label text-label text-on-surface-variant">Annual Goal</span>
+</div>
+</div>
+</div>
+<ul class="mt-xl space-y-2">
+<li class="flex justify-between items-center text-body font-body">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary"></div>
+<span>Marine Tourism</span>
+</div>
+<span class="font-h4 text-h4">45%</span>
+</li>
+<li class="flex justify-between items-center text-body font-body">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<span>Cultural Tours</span>
+</div>
+<span class="font-h4 text-h4">35%</span>
+</li>
+<li class="flex justify-between items-center text-body font-body">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-secondary-container"></div>
+<span>Accommodations</span>
+</div>
+<span class="font-h4 text-h4">20%</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Partners Performance List -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-white rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+<div class="flex justify-between items-center mb-xl">
+<h4 class="font-h3 text-h3 text-primary">Top Performing Partners</h4>
+<button class="text-primary font-body-medium flex items-center gap-1 hover:underline">
+                        View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Partner Row -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A professional aerial photograph of a boutique coastal resort with white architecture and traditional thatched roofs, overlooking a turquoise ocean under bright midday sunlight. The scene is calm, clean, and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-36t2qjz4nyu_Hn3LhOgzAjgX9Obg9agt6HJgjVTQCDuQ-e3do-EVcd3anmxizUoUclzTjw6Wrnu_wrZBK2DQaMIx-7Tvs5bNwdNVShhzf6EYFWgej4vLM1bWyU0QPqMH_veE-s8ilU0matJzcOS4Jga8BLi_e1ptMXGkEbGAWPg7VnTpdyoSvMGLtGe9W2T9KKw7fsomUTeGEjwv3yxvKQezZmZCI0K-KcOZK1R4E6yIbjD-HxP0bi5WmjW8iixHrThFFqrmcq8P"/>
+<div>
+<span class="block font-h4 text-h4 text-primary">Nirwana Resort</span>
+<span class="block font-label text-label text-on-surface-variant">Premium Hospitality</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-h4 text-h4 text-primary">+24%</span>
+<span class="block font-label text-label text-success text-green-600">Growth Index</span>
+</div>
+</div>
+<!-- Partner Row -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="An elegant restaurant interior featuring warm wooden textures and local maritime decor, with large windows showing a sunset over the harbor. Soft ambient lighting highlights the professional table settings and sophisticated atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArJC4fAnDoTWIlb24ODvr5hI7Jku_1XRrhfnhWEBmNfm6QPFvFmAWTxZ4p_eOw5T_mkc8ItW5_nbfECFDtuZpEonz2TzLgo5uuCWFgBLNjwSCzDFwS-MPRxogV1qBD-_1Tuc2hIKcuPBSQrFSJo9O00tc7MEoVnACKOpmZBAbNgYVN52S-z2K-7Mb3oUf8JbBhh7IoNN21UcR5NWVsj6zBDPZq6AWtcY-VDmXdfEL94tk1E9cgyNnoUzPsitAauswO9X3VKk9sHFfA"/>
+<div>
+<span class="block font-h4 text-h4 text-primary">Buton Sea Feast</span>
+<span class="block font-label text-label text-on-surface-variant">Culinary Partner</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-h4 text-h4 text-primary">+18%</span>
+<span class="block font-label text-label text-success text-green-600">Growth Index</span>
+</div>
+</div>
+<!-- Partner Row -->
+<div class="flex items-center justify-between p-3 rounded-lg border border-outline-variant/20 hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="A professional scuba diving instructor in high-quality gear surfacing in crystal clear blue water near a vibrant coral reef. The sun beams through the water creating a shimmering, high-key effect that emphasizes adventure and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACSSwany2-De9pYzwPXlq2lMZPAlIP-1-CYD3LAs_LExY1xK5CGUVwosOfHFKux8NYC03ylcjnLeCo23GOr4dHVP3MExYJGk7u7TVfZC95PhmyMZYInvjsyMJFepUSam2vtst5AfetA3S5MV6jLybMsB6svNRa81WbjfrGW-7pxX1gcE2xLwNxRYZezOcosIfyYH6VwTpfR8GGYFSqjqw7ZEUhMLAbZzAUcEj1NxQeAgn4XuduMOObRIuszlm-vMo_vDrndL5Jh--8"/>
+<div>
+<span class="block font-h4 text-h4 text-primary">Wakatobi Dive Hub</span>
+<span class="block font-label text-label text-on-surface-variant">Activity Provider</span>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-h4 text-h4 text-primary">+15%</span>
+<span class="block font-label text-label text-success text-green-600">Growth Index</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Regional Heatmap Placeholder -->
+<div class="bg-white rounded-xl p-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex flex-col">
+<h4 class="font-h3 text-h3 text-primary mb-xl">Tourist Activity Hotspots</h4>
+<div class="flex-grow relative rounded-lg overflow-hidden border border-outline-variant/20 bg-surface-container-low">
+<img class="w-full h-full object-cover opacity-60 grayscale" data-alt="A high-resolution map-like aerial view of the coastal city of Baubau, Sulawesi, showing the white limestone walls of the fortress and the surrounding turquoise coastline. The image is clean and bright, styled like a professional geographic information system visualization with soft contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2IY_8JaeewIdfI_s5gZNVq9T3UNFVxVxQ8JzSXEU77o1Xg-UDCqn-6XiSj9yEqF1mSay_8kY1LsuwMJ4mTP6pT0zh0cKfcvHRqW20SKXM2J8u7T4MuxD3BLlN4iKWRKWu2iUpvWI0l4onwg4Q0jrPX1HTYbKVdlAeywMZGyXmG4B6XhigzI_voU6XYLZdF-xH-A4zI_AUS53RpeEepYUgu3mjAJ-C35OQMI3cSqkL-fMQOxvqXso8Z3IuFqz6tClHVbzvqRLtKiPo"/>
+<!-- Map Overlays -->
+<div class="absolute top-1/4 left-1/3 w-8 h-8 bg-primary/40 rounded-full animate-pulse border-2 border-primary"></div>
+<div class="absolute bottom-1/3 right-1/4 w-12 h-12 bg-primary/30 rounded-full animate-pulse border-2 border-primary"></div>
+<div class="absolute top-1/2 right-1/2 w-6 h-6 bg-primary/50 rounded-full animate-pulse border-2 border-primary"></div>
+<div class="absolute bottom-4 left-4 glass-card p-3 rounded-lg shadow-lg">
+<span class="text-primary font-h4 text-h4">Kraton Buton Area</span>
+<span class="block text-on-surface-variant font-label text-label">High Visitor Density (92%)</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-all px-4 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for chart bars
+        document.querySelectorAll('.bg-surface-container').forEach(bar => {
+            bar.addEventListener('mouseenter', function() {
+                this.classList.add('scale-x-110', 'shadow-md');
+            });
+            bar.addEventListener('mouseleave', function() {
+                this.classList.remove('scale-x-110', 'shadow-md');
+            });
+        });
+        
+        // Active interactions from JSON requirement
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('opacity-80', 'scale-95');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('opacity-80', 'scale-95');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('opacity-80', 'scale-95');
+            });
+        });
+    </script>
+</body></html>

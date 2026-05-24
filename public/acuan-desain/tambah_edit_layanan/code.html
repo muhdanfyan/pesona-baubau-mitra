@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "secondary-container": "#fedb9b",
+            "primary": "#003b5a",
+            "on-secondary-container": "#795f2b",
+            "primary-container": "#1a5276",
+            "tertiary-fixed": "#ffddb3",
+            "on-tertiary-container": "#eab66d",
+            "inverse-on-surface": "#f7f0e6",
+            "tertiary-fixed-dim": "#f2bd74",
+            "on-tertiary-fixed-variant": "#633f00",
+            "on-primary-container": "#94c5ee",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#6b4604",
+            "on-tertiary": "#ffffff",
+            "background": "#fff8f1",
+            "surface-container-lowest": "#ffffff",
+            "on-error": "#ffffff",
+            "outline": "#72787f",
+            "surface-container-highest": "#e8e1d8",
+            "surface-container": "#f4ede3",
+            "outline-variant": "#c1c7cf",
+            "surface-dim": "#e0d9d0",
+            "primary-fixed": "#cbe6ff",
+            "on-secondary-fixed-variant": "#5a4312",
+            "on-secondary": "#ffffff",
+            "tertiary": "#4d3100",
+            "inverse-primary": "#9bccf6",
+            "on-tertiary-fixed": "#291800",
+            "inverse-surface": "#33302a",
+            "secondary": "#745a27",
+            "surface": "#fff8f1",
+            "on-primary-fixed": "#001e30",
+            "on-surface-variant": "#41474e",
+            "on-background": "#1e1b16",
+            "on-secondary-fixed": "#261900",
+            "secondary-fixed": "#ffdea4",
+            "surface-variant": "#e8e1d8",
+            "surface-container-high": "#eee7de",
+            "on-primary-fixed-variant": "#0e4b6e",
+            "surface-bright": "#fff8f1",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#faf3e9",
+            "surface-tint": "#2f6388",
+            "primary-fixed-dim": "#9bccf6",
+            "on-error-container": "#93000a",
+            "secondary-fixed-dim": "#e4c285",
+            "on-surface": "#1e1b16"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "16px",
+            "2xl": "32px",
+            "margin-mobile": "16px",
+            "xl": "24px",
+            "sm": "8px",
+            "xs": "4px",
+            "margin-desktop": "24px",
+            "lg": "16px",
+            "base": "4px",
+            "3xl": "48px",
+            "4xl": "64px",
+            "md": "12px"
+          },
+          "fontFamily": {
+            "h2": ["Inter"],
+            "body-medium": ["Inter"],
+            "body": ["Inter"],
+            "h4": ["Inter"],
+            "label": ["Inter"],
+            "h1": ["Inter"],
+            "button": ["Inter"],
+            "h3": ["Inter"]
+          },
+          "fontSize": {
+            "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "h2-mobile": ["20px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+            "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+            "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "label-mobile": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "h1-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+            "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "h3-mobile": ["16px", {"lineHeight": "1.4", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .custom-shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .heavy-shadow { box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .nav-shadow { box-shadow: 0 -2px 12px rgba(0,0,0,0.08); }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #003b5a !important;
+      box-shadow: 0 0 0 2px rgba(0, 59, 90, 0.1);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-[64px] z-50 bg-surface border-b border-outline-variant/30 sticky top-0 shadow-sm">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary">Manage Service</h1>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-primary">help_outline</span>
+</div>
+</header>
+<main class="max-w-screen-md mx-auto px-margin-mobile pt-xl">
+<form class="space-y-xl" id="service-form">
+<!-- Photo Section (Bento Style Preview) -->
+<section class="space-y-md">
+<div class="flex justify-between items-end">
+<h2 class="font-h4 text-h4 text-on-surface">Service Gallery</h2>
+<span class="font-label text-label text-outline">Up to 5 photos</span>
+</div>
+<div class="grid grid-cols-4 grid-rows-2 gap-sm h-[240px]">
+<div class="col-span-2 row-span-2 relative group rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A luxury hotel room interior featuring large windows overlooking a serene coastal landscape in Baubau. The morning sunlight filters through soft linens, highlighting the natural textures of wood and local textiles. The visual style is premium and editorial with a warm, inviting atmosphere consistent with a professional tourism hub." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcKCIqrR55RXelbARopC49zy7aVv3HsIuFZfAZgbiPsZddXa-KGmMzXk8BoJy8eEiIf30_JxfC3oMIdsZzUdhNBKV-K94clLyhmw6DuSevLK97U5hBWVK2AmcBJgH_t6Ifnpr2z2r3tXl8P0vRPeiGd1IeZBe2vqvVvesOSl0XA6C1Ueq_eoQPgN_VoUDz4jCgSZ-4gNMKOSSaUmET7-_LfLX4Zoac_8XKpCPGAFlPTBj-JEvqpzzotoQNzsR-1MUJ770u7ufeqm2D"/>
+<button class="absolute top-2 right-2 bg-black/40 text-white p-1 rounded-full backdrop-blur-md" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="col-span-2 row-span-1 relative group rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A high-end restaurant table setting with traditional Baubau culinary elements presented in a modern, artistic way. The table is made of dark polished wood reflecting soft ambient light from brass fixtures. The scene is elegant and professional, showcasing local culture through a sophisticated digital tourism lens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdCLEmh-_n0SPcfQ1bqIqul8Xi0pGtKDuRNSSZ2um7oVXcFNx7vLYdK3dl1nZ48D7024YtXvdUZ5iwXB8RBiUio147XWJ8H40rPyjYsl1082K8z7u7QRx67m2HkZjGJKKljPX_316xI17mSZLVll0g79b8kSUHeurG8goIVxfFrT_0u9le4TXsyD8re2u5oerhhAlpRuNkDn4MnQTg4sB1ZK2wUviQqt_kp4UTm4GR5Z-KUu5pGZoxpR1ghkUA8nLaY-NwPolZaKl8"/>
+<button class="absolute top-2 right-2 bg-black/40 text-white p-1 rounded-full backdrop-blur-md" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="col-span-1 row-span-1 border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center bg-surface hover:bg-surface-container-low transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline">add_a_photo</span>
+</div>
+<div class="col-span-1 row-span-1 border border-outline-variant/30 bg-surface-container-low rounded-xl"></div>
+</div>
+</section>
+<!-- Basic Info Card -->
+<div class="bg-surface-container-lowest p-xl rounded-xl custom-shadow space-y-lg border border-outline-variant/10">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant px-1">Service Name</label>
+<input class="w-full h-[48px] px-lg rounded-lg border border-outline/30 bg-white font-body text-on-surface placeholder:text-outline/50 transition-all" placeholder="e.g., Nirwana Beach Villa" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant px-1">Category</label>
+<select class="w-full h-[48px] px-lg rounded-lg border border-outline/30 bg-white font-body text-on-surface appearance-none transition-all">
+<option>Select Category</option>
+<option selected="">Accommodation</option>
+<option>Culinary</option>
+<option>Transportation</option>
+<option>Tour Package</option>
+</select>
+</div>
+<div class="space-y-xs relative">
+<label class="font-label text-label text-on-surface-variant px-1">Price (IDR)</label>
+<div class="relative">
+<span class="absolute left-lg top-1/2 -translate-y-1/2 font-body text-outline">Rp</span>
+<input class="w-full h-[48px] pl-12 pr-lg rounded-lg border border-outline/30 bg-white font-body text-on-surface transition-all" type="number" value="1250000"/>
+</div>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant px-1">Description</label>
+<textarea class="w-full p-lg rounded-lg border border-outline/30 bg-white font-body text-on-surface placeholder:text-outline/50 transition-all" placeholder="Describe the unique features, amenities, and cultural heritage of your service..." rows="4"></textarea>
+</div>
+</div>
+<!-- Advanced Settings Accordion -->
+<div class="bg-surface-container-lowest rounded-xl custom-shadow border border-outline-variant/10 overflow-hidden">
+<button class="w-full flex items-center justify-between p-xl hover:bg-surface-container-low transition-colors" onclick="toggleAccordion('availability')" type="button">
+<div class="flex items-center gap-lg">
+<span class="material-symbols-outlined text-secondary">calendar_today</span>
+<span class="font-h4 text-h4">Availability &amp; Booking</span>
+</div>
+<span class="material-symbols-outlined transition-transform" id="availability-icon">expand_more</span>
+</button>
+<div class="px-xl pb-xl hidden space-y-lg" id="availability-content">
+<div class="flex items-center justify-between py-sm">
+<div>
+<p class="font-body-medium">Instant Booking</p>
+<p class="font-label text-outline">Allow guests to book without waiting for approval</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="grid grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant">Min. Notice (Hours)</label>
+<input class="w-full h-[48px] px-lg rounded-lg border border-outline/30 bg-white font-body transition-all" type="number" value="24"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label text-label text-on-surface-variant">Capacity</label>
+<input class="w-full h-[48px] px-lg rounded-lg border border-outline/30 bg-white font-body transition-all" type="number" value="2"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex gap-lg pt-xl">
+<button class="flex-1 h-[48px] rounded-xl border border-primary text-primary font-button hover:bg-primary-container/10 transition-colors active:scale-95" type="button">
+          Save as Draft
+        </button>
+<button class="flex-1 h-[48px] rounded-xl bg-primary text-white font-button hover:opacity-90 shadow-md transition-all active:scale-95" type="submit">
+          Publish Service
+        </button>
+</div>
+</form>
+</main>
+<!-- Bottom Nav Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest dark:bg-surface-container-low nav-shadow rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 h-full cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-all px-4 h-full cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 h-full cursor-pointer">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-all px-4 h-full cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</div>
+</nav>
+<script>
+    function toggleAccordion(id) {
+      const content = document.getElementById(id + '-content');
+      const icon = document.getElementById(id + '-icon');
+      if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // Micro-interaction for input feedback
+    const inputs = document.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      input.addEventListener('focus', () => {
+        input.parentElement.classList.add('scale-[1.01]');
+        input.parentElement.classList.add('transition-transform');
+      });
+      input.addEventListener('blur', () => {
+        input.parentElement.classList.remove('scale-[1.01]');
+      });
+    });
+
+    document.getElementById('service-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Visual feedback for submission
+      const btn = e.target.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span>';
+      btn.classList.add('opacity-80');
+      
+      setTimeout(() => {
+        btn.innerHTML = 'Success!';
+        btn.classList.replace('bg-primary', 'bg-green-600');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.replace('bg-green-600', 'bg-primary');
+          btn.classList.remove('opacity-80');
+        }, 2000);
+      }, 1500);
+    });
+  </script>
+</body></html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#1a5276",
+                        "on-surface-variant": "#41474e",
+                        "tertiary-fixed": "#ffddb3",
+                        "tertiary-container": "#6b4604",
+                        "on-primary-container": "#94c5ee",
+                        "inverse-on-surface": "#f7f0e6",
+                        "surface-dim": "#e0d9d0",
+                        "inverse-surface": "#33302a",
+                        "background": "#fff8f1",
+                        "surface-bright": "#fff8f1",
+                        "secondary-fixed": "#ffdea4",
+                        "outline-variant": "#c1c7cf",
+                        "inverse-primary": "#9bccf6",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#291800",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1e1b16",
+                        "primary-fixed-dim": "#9bccf6",
+                        "outline": "#72787f",
+                        "surface-container-highest": "#e8e1d8",
+                        "on-primary-fixed-variant": "#0e4b6e",
+                        "surface-variant": "#e8e1d8",
+                        "on-secondary-container": "#795f2b",
+                        "on-primary-fixed": "#001e30",
+                        "tertiary": "#4d3100",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1e1b16",
+                        "tertiary-fixed-dim": "#f2bd74",
+                        "on-secondary-fixed-variant": "#5a4312",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#eee7de",
+                        "surface-container": "#f4ede3",
+                        "secondary-container": "#fedb9b",
+                        "on-secondary-fixed": "#261900",
+                        "secondary": "#745a27",
+                        "on-tertiary-container": "#eab66d",
+                        "on-tertiary-fixed-variant": "#633f00",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#e4c285",
+                        "error-container": "#ffdad6",
+                        "surface": "#fff8f1",
+                        "surface-tint": "#2f6388",
+                        "primary-fixed": "#cbe6ff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#faf3e9",
+                        "primary": "#003b5a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xl": "24px",
+                        "margin-desktop": "24px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "lg": "16px",
+                        "4xl": "64px",
+                        "2xl": "32px",
+                        "md": "12px",
+                        "3xl": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-medium": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "button": ["Inter"],
+                        "h4": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-medium": ["14px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "h1": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["22px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h3": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h3-mobile": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "button": ["14px", {"lineHeight": "1.0", "fontWeight": "500"}],
+                        "h4": ["16px", {"lineHeight": "1.5", "fontWeight": "600"}],
+                        "body": ["14px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-mobile": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F5F3F0; /* Krem background as per style guidance */
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen pb-40">
+<!-- Top AppBar Component -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant/30 shadow-sm fixed top-0 w-full h-[64px] z-50 flex justify-between items-center px-margin-mobile">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="anchor">anchor</span>
+<h1 class="font-h3 text-h3-mobile font-bold text-primary dark:text-primary-fixed-dim">Destinasi Binaan</h1>
+</div>
+<button class="bg-[#1A5276] text-white px-4 py-2 rounded-lg flex items-center gap-2 font-button text-button transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+<span>Tambah</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="mt-[80px] px-margin-mobile space-y-4">
+<!-- Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl p-lg shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-outline-variant/20">
+<div class="flex justify-between items-center mb-sm">
+<p class="font-label text-label-mobile text-on-surface-variant uppercase tracking-wider">Overview Kelola</p>
+<span class="material-symbols-outlined text-secondary" data-icon="monitoring">monitoring</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-[24px] font-bold text-primary">3</p>
+<p class="font-body text-on-surface-variant text-[12px]">Destinasi Aktif</p>
+</div>
+<div>
+<p class="text-[24px] font-bold text-secondary">5.500</p>
+<p class="font-body text-on-surface-variant text-[12px]">Total Kunjungan</p>
+</div>
+</div>
+</div>
+<!-- Destination List -->
+<div class="space-y-4">
+<!-- Destination Card 1 -->
+<div class="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] overflow-hidden border border-outline-variant/10">
+<div class="relative h-32">
+<img class="w-full h-full object-cover" data-alt="A serene tropical beach scene at Pantai Kamali in Baubau, featuring calm turquoise waters and fine white sand under a bright morning sun. The atmosphere is peaceful and well-maintained, reflecting a premium tourism standard with clear horizons. Soft natural lighting enhances the warm krem and sea blue tones of the environment, evoking a sense of heritage and natural beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiD6UwFLk7KSMi18n8bPQwLwGFAy0KY8KvsOTUH4GfOrE4dQ_rR6OE5DsKbnu8APqmidbAHrFNN7uUWGNLpb_oeYycZ8c7QCOVgYpJaOVxgR_auScRqET-Dpf6alx_9tflYeHJDMVuMOGnYdm5_hKp1wiM80TQg04GndfrzqwnNSpkZTpkltIp2vH5N6rOtQM_A-RvL17a6xHbqQJ7bsQ5lgdz5zxqk-poyQ4HCvn34bXPWrO31Thhu0WgLDiL2-zftyZ7MJphrMhZ"/>
+<div class="absolute top-2 right-2">
+<span class="bg-green-100 text-green-700 px-3 py-1 rounded-full font-label text-[11px] font-bold border border-green-200">Terawat</span>
+</div>
+</div>
+<div class="p-4">
+<h2 class="font-h3 text-primary mb-1">Pantai Kamali</h2>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="groups">groups</span>
+<p class="font-body text-on-surface-variant text-[13px]">1.250 kunjungan bulan ini</p>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container text-primary font-button py-3 rounded-lg border border-outline-variant/30 flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="sync">sync</span>
+                                Update Status
+                            </button>
+<button class="flex-1 bg-surface-container text-primary font-button py-3 rounded-lg border border-outline-variant/30 flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+                                Lihat Detail
+                            </button>
+</div>
+<button class="w-full bg-error-container/20 text-error font-button py-3 rounded-lg border border-error/20 flex items-center justify-center gap-2 active:bg-error-container/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="report_problem">report_problem</span>
+                            Lapor Masalah
+                        </button>
+</div>
+</div>
+</div>
+<!-- Destination Card 2 -->
+<div class="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] overflow-hidden border border-outline-variant/10">
+<div class="relative h-32">
+<img class="w-full h-full object-cover" data-alt="An ancient stone fortress of Benteng Keraton Buton, the largest bastioned fort in the world, under a dramatic cloudy sky. The massive stone walls show signs of historical wear, suggesting a need for conservation. The lighting is slightly moody, highlighting the textures of the old volcanic stones and the heritage importance of the site in Buton, Indonesia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB10JV_GmqH613y9eKFrq0GHwt1Ab0saqRQM6n4rE6P7rtA-DOo-RHtnx-8V7c2MEqN03JpbpA2SvY38McRHGjIlU1rWp4mg5FKy_azUVoRgps4CRSUfPtySWVsHYfNetMJqebTFqivjFRnn5OfqpAK_q7Lv-zxHXI8aycQccjO_XrkUQjT24-FDLZVNlk_cOm1H4419sHg8FAcKoCAe9t4miGf3xaTgjAEUNHYl1H18pVL5PvMNBvcH7IG62OwKnNdj8KhptTaH2jD"/>
+<div class="absolute top-2 right-2">
+<span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full font-label text-[11px] font-bold border border-yellow-200">Butuh Perbaikan</span>
+</div>
+</div>
+<div class="p-4">
+<h2 class="font-h3 text-primary mb-1">Benteng Keraton Buton</h2>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="groups">groups</span>
+<p class="font-body text-on-surface-variant text-[13px]">3.400 kunjungan bulan ini</p>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container text-primary font-button py-3 rounded-lg border border-outline-variant/30 flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="sync">sync</span>
+                                Update Status
+                            </button>
+<button class="flex-1 bg-surface-container text-primary font-button py-3 rounded-lg border border-outline-variant/30 flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+                                Lihat Detail
+                            </button>
+</div>
+<button class="w-full bg-error-container/20 text-error font-button py-3 rounded-lg border border-error/20 flex items-center justify-center gap-2 active:bg-error-container/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="report_problem">report_problem</span>
+                            Lapor Masalah
+                        </button>
+</div>
+</div>
+</div>
+<!-- Destination Card 3 -->
+<div class="bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.06)] overflow-hidden border border-outline-variant/10">
+<div class="relative h-32">
+<img class="w-full h-full object-cover" data-alt="A dense pine forest in Samparona with sunlight filtering through tall trees, creating long shadows on a misty morning. The atmosphere is cool and slightly mysterious, with a focus on the natural environment. The visual style is crisp and professional, capturing the high-altitude climate and the rugged beauty of the inland hills of Baubau." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx9mnJL78m68MbOyQ9VYOQ8t1KHftOjj7xnFHmDB3Iv1lhq6ntPqn5fS87pME_y9SqJPjcvMyET_qPeoOhQeP_wbkNIYoCiB5URUCQWp2YDJoQWFAVBiLVMRNkKC5hmSzTXmhNyp8PUPJfL1x2uvQIvQ6cv7IefYW2lNHwHPl7426i0slY-6rbn5jRzhY3O2iTWlmzNLTOAEcNPLUiBMHp8QGxRTJjrStskeqGiXTyrAuHcpwgvlmNQRPVz7r3rtdOCSxTx0NsW7e_"/>
+<div class="absolute top-2 right-2">
+<span class="bg-red-100 text-red-700 px-3 py-1 rounded-full font-label text-[11px] font-bold border border-red-200">Darurat</span>
+</div>
+</div>
+<div class="p-4">
+<h2 class="font-h3 text-primary mb-1">Hutan Pinus Samparona</h2>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-[18px]" data-icon="groups">groups</span>
+<p class="font-body text-on-surface-variant text-[13px]">850 kunjungan bulan ini</p>
+</div>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container text-primary font-button py-3 rounded-lg border border-outline-variant/30 flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="sync">sync</span>
+                                Update Status
+                            </button>
+<button class="flex-1 bg-surface-container text-primary font-button py-3 rounded-lg border border-outline-variant/30 flex items-center justify-center gap-2 active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span>
+                                Lihat Detail
+                            </button>
+</div>
+<button class="w-full bg-error-container/20 text-error font-button py-3 rounded-lg border border-error/20 flex items-center justify-center gap-2 active:bg-error-container/40 transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="report_problem">report_problem</span>
+                            Lapor Masalah
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Container (Floating Above Nav) -->
+<div class="fixed bottom-[64px] left-0 w-full p-margin-mobile bg-gradient-to-t from-background via-background/90 to-transparent z-40">
+<button class="w-full h-[48px] bg-primary text-white rounded-xl font-button text-button shadow-lg flex items-center justify-center gap-3 transition-transform active:scale-[0.98]">
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+            Kirim Laporan ke Dinas
+        </button>
+</div>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-[64px] px-2 pb-safe bg-surface-container-lowest dark:bg-surface-container-low shadow-[0_-2px_12px_rgba(0,0,0,0.08)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all px-4 h-full" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label text-label-mobile">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim font-bold hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all px-4 h-full" href="#">
+<span class="material-symbols-outlined active-nav-icon" data-icon="grid_view" data-weight="fill">grid_view</span>
+<span class="font-label text-label-mobile">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all px-4 h-full" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-label-mobile">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all px-4 h-full" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-label-mobile">Account</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('touchstart', function() {
+                this.classList.add('opacity-80');
+            });
+            btn.addEventListener('touchend', function() {
+                this.classList.remove('opacity-80');
+            });
+        });
+
+        // Simple scroll behavior for top app bar shadow
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>
