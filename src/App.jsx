@@ -16,21 +16,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Root → Landing page pilih role */}
+        {/* Root → Landing page kaya dengan data dummy */}
         <Route path="/" element={<BerandaMitra />} />
-        <Route path="/login" element={<LoginMitra />} />
-        <Route path="/login/:role" element={<LoginMitra />} />
 
-        {/* UMKM Routes */}
+        {/* Login - akses dari tombol kecil di pojok kanan header */}
+        <Route path="/login" element={<LoginMitra />} />
+
+        {/* UMKM Routes - langsung ke dashboard tanpa login */}
         <Route path="/umkm" element={<DashboardUMKM />} />
         <Route path="/umkm/produk" element={<KelolaProduk />} />
         <Route path="/umkm/produk/tambah" element={<TambahProduk />} />
 
-        {/* Hotel Routes */}
+        {/* Hotel Routes - langsung ke dashboard tanpa login */}
         <Route path="/hotel" element={<DashboardHotel />} />
         <Route path="/hotel/kamar" element={<KelolaKamar />} />
 
-        {/* Pokdarwis Routes */}
+        {/* Pokdarwis Routes - langsung ke dashboard tanpa login */}
         <Route path="/pokdarwis" element={<DashboardPokdarwis />} />
         <Route path="/pokdarwis/destinasi" element={<ManajemenDestinasi />} />
         <Route path="/pokdarwis/laporan" element={<Laporan />} />
