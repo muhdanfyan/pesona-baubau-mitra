@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginMitra from './pages/LoginMitra';
+import BerandaMitra from './pages/BerandaMitra';
 import DashboardUMKM from './pages/UMKM/DashboardUMKM';
 import KelolaProduk from './pages/UMKM/KelolaProduk';
 import TambahProduk from './pages/UMKM/TambahProduk';
@@ -15,8 +16,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/login" replace />} />
+        {/* Root → Landing page pilih role */}
+        <Route path="/" element={<BerandaMitra />} />
         <Route path="/login" element={<LoginMitra />} />
+        <Route path="/login/:role" element={<LoginMitra />} />
 
         {/* UMKM Routes */}
         <Route path="/umkm" element={<DashboardUMKM />} />
