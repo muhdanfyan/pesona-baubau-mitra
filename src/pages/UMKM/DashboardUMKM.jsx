@@ -5,7 +5,7 @@ export default function DashboardUMKM() {
   const navigate = useNavigate();
 
   const menuItems = [
-    { label: 'Kelola Produk', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', path: '/umkm/produk', bg: 'bg-[#003b5a]' },
+    { label: 'Kelola Produk & Jasa', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', path: '/umkm/produk', bg: 'bg-[#003b5a]' },
     { label: 'Statistik', icon: 'M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z', bg: 'bg-[#745a27]' },
     { label: 'Pesan', icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z', bg: 'bg-[#6b4604]' },
     { label: 'Profil', icon: 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z', path: '/profil', bg: 'bg-[#41474e]' },
@@ -56,7 +56,7 @@ export default function DashboardUMKM() {
         <section className="grid grid-cols-3 gap-3 mb-5">
           <div className="bg-white rounded-xl p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-l-4 border-[#003b5a] text-center">
             <p className="text-[20px] font-bold text-[#003b5a]">12</p>
-            <p className="text-[10px] font-medium text-[#41474e]">Produk Aktif</p>
+            <p className="text-[10px] font-medium text-[#41474e]">Layanan/Produk Aktif</p>
           </div>
           <div className="bg-white rounded-xl p-3.5 shadow-[0_2px_8px_rgba(0,0,0,0.06)] border-l-4 border-[#745a27] text-center">
             <p className="text-[20px] font-bold text-[#745a27]">45</p>

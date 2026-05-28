@@ -29,10 +29,19 @@ export default function TambahProduk() {
             </div>
           </div>
 
-          {/* Nama Produk */}
+          {/* Nama Produk / Layanan */}
           <div className="space-y-1">
-            <label className="text-[12px] font-medium text-[#41474e] ml-1">Nama Produk</label>
-            <input className="w-full h-[48px] px-4 rounded-xl border border-[#c1c7cf]/30 bg-white focus:ring-2 focus:ring-[#003b5a]/20 focus:border-[#003b5a] outline-none transition-all" placeholder="Masukkan nama produk" type="text" />
+            <label className="text-[12px] font-medium text-[#41474e] ml-1">Nama Produk / Layanan</label>
+            <input className="w-full h-[48px] px-4 rounded-xl border border-[#c1c7cf]/30 bg-white focus:ring-2 focus:ring-[#003b5a]/20 focus:border-[#003b5a] outline-none transition-all" placeholder="Masukkan nama produk atau layanan" type="text" />
+          </div>
+
+          {/* Tipe */}
+          <div className="space-y-1">
+            <label className="text-[12px] font-medium text-[#41474e] ml-1">Tipe</label>
+            <select className="w-full h-[48px] px-4 rounded-xl border border-[#c1c7cf]/30 bg-white focus:ring-2 focus:ring-[#003b5a]/20 focus:border-[#003b5a] outline-none transition-all text-[#41474e]">
+              <option>Produk Fisik</option>
+              <option>Layanan / Jasa</option>
+            </select>
           </div>
 
           {/* Kategori */}
@@ -43,6 +52,8 @@ export default function TambahProduk() {
               <option>Kerajinan Tangan</option>
               <option>Makanan & Minuman</option>
               <option>Fashion</option>
+              <option>Penginapan / Hotel</option>
+              <option>Jasa Fotografer / Pemandu</option>
               <option>Lainnya</option>
             </select>
           </div>
